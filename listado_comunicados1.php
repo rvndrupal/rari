@@ -59,10 +59,24 @@
 		if(isset($_GET['tipo'])&&$_GET['tipo']>0)
 			$query_catalogos =$query_catalogos.' and idTipoComunicado='.$_GET['tipo'];
 
+			
+		//sección de las fechas
 
+		$fecUno=$_GET['da1'];
+		$fecDos=$_GET['da2'];
 
+		if(isset($fecUno)&&isset($fecDos))
+		{
+			if($_GET['da1']==$_GET['da2'])
+				$query_catalogos =$query_catalogos.' and fecha=\''.$fecUno.'\'';
+			if($_GET['da1']<$_GET['da2'])
+			$query_catalogos =$query_catalogos.' and fecha>=\''.$fecUno.'\' and fecha<=\''.$fecDos.'\' ';
+			if($_GET['da1']>$_GET['da2'])
+				$query_catalogos =$query_catalogos.' and fecha=\''.$fecUno.'\'';	
+			//$query_catalagos=$query_catalagos.'  ORDER BY  fecha=\''.$fecUno.'\' DES';
+		}
 
-
+		//fechas
 
 /*
 
