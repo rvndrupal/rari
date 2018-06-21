@@ -347,6 +347,6 @@
 	*/
 	//$Goto = '/bienvenido.php';
 	//$GoTo = '/listado.php?mod='.$area;		
-	header('Location: bienvenido.php');
+	header('Location: bienvenido.php ');
 	exit();
  ?>
