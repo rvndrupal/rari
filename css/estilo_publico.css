@@ -1,0 +1,162 @@
+/* CSS Document */
+#footer { position: relative; bottom:0; /* altura en px del footer con valor negativo */ height: 50px; /* Altura del Footer en px*/ clear: both; background: #286af0; text-align: center; color: #FFFFFF; } 
+
+.enlace{
+background-position:center; background-size:contain; height:30px; width:30px;
+background-repeat:no-repeat;
+float:left; margin:8px;
+}
+
+.tituloUIS{
+	color:#222; text-shadow: 0.1em 0.1em #eee;
+}
+.leyendaUIS{
+color:#FFF; background-image: url(../imagenes/patterns/fonfo-info.png); text-shadow: 0.1em 0.1em #333;
+ bottom:0; position: absolute;
+}
+.noticia-uis{
+height:100px; width:200px; border: 1px #aaa solid; float: left; margin-top:5px; margin-left:5px;
+background-color:#eaeaea;
+background-image:url(../imagenes/noticias_peq.png);
+background-position:center;
+background-repeat:no-repeat;
+}
+.ima{
+	 display:none; background-size:cover; background-position:center; width:100%; height:100%; position:relative;
+}
+
+.cont{
+	width:95%; padding:5px; height:98%;
+}
+
+.tabArea{
+	width:20px; height:20px; background-size:contain; background-position:center; 
+	border:1px #666 solid;
+	margin:-3px;
+}
+
+.tabArea:hover{
+	
+	border-bottom:#0F0 2px solid;
+	cursor:pointer;
+	}
+body{
+	margin:0;
+	background-color:#FFF;
+	font-family: 'Raleway', sans-serif;
+	font-size:13px;
+	color:#555;
+	
+	}
+.encabezado{
+	min-width:1220px;
+width:100%;
+height:100px;
+margin-bottom:5px;
+border-bottom:#999 1px solid;
+
+}
+.barraIzq{
+height:500px;
+width:15%;
+float:left;
+min-width:150px;
+}
+
+.login{
+border-bottom: 1px solid #ddd;
+border-radius:5px;
+
+}
+.centro{
+	display:block;
+width:85%;
+height:500px;
+min-width:550px;
+float:right;
+
+}
+.barraDer{
+height:500px;
+width:15%;
+min-width:180px;
+}
+.cuerpo{
+width:100%;
+
+min-width:1000px;
+}
+input[type="text"],input[type="submit"],input[type="password"],input[type="button"],select{
+	padding: 7px;
+	
+	border: solid 1px #999;
+	background: #fff;
+	border-radius: 5px;
+	color: #000;
+	width:90%;
+}
+	input[type="password"]:focus,input[type="password"]:active,input[type="password"]:hover, input[type="text"]:focus,input[type="text"]:active,input[type="text"]:hover,
+	input[type="button"]:focus,input[type="button"]:active,input[type="button"]:hover, input[type="submit"]:focus,input[type="submit"]:active,input[type="submit"]:hover,
+	select:focus,select:active,select:hover{
+		border-color: #063;
+	}
+.noticias{
+border-collapse:collapse;
+}
+
+.noticias tr{
+	color:#555;
+	border-bottom:#dadada solid 1px;
+	font-size:12px;
+}
+
+.noticias tr:hover{
+	background-color:#efefef;
+	color:#111;
+	cursor:pointer;
+}
+
+.noticias td{
+	padding:5px;
+}
+
+.tab
+{
+	height:20px; background-color:#eee;
+	border:#eee solid 1px;
+	
+	border-radius:10px 10px 0px 0px;
+	width:30px;
+	cursor:pointer;
+	background-repeat:no-repeat;
+background-position:center;
+padding:5px;
+padding-left:30px; 
+
+	}
+.desc{
+	padding-right:10px;
+	text-align:justify;
+}
+
+.iconoComunicado{
+	background-size:contain; background-repeat:no-repeat; border-radius:5px; margin-top:5px; margin-right:5px; float:right; width:30px; height:30px; color:#FFF; padding:5px;
+}
+
+.contentInfoComunicado{
+width:100%; height:100%; background-image:url(../imagenes/patterns/fondo-imagenes.png); background-repeat:repeat-x;
+}
+
+.barraInfo{
+	text-shadow: 0.1em 0.1em #444;
+	background-image:url(../imagenes/patterns/fonfo-info.png); color:#FFF; padding:5px;
+}
+
+.selector{
+width:25px; height:25px; background-image:url(../imagenes/flecha_izquierda.png); background-size:contain; background-repeat:no-repeat;
+}
+
+.slider-uis{
+	text-shadow: 0.1em 0.1em #444;
+	margin:auto;
+}

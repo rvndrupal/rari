@@ -1,0 +1,575 @@
+﻿/* Hoja de Estilos utilizados para la visualización del Sitio */
+		@font-face 	{ font-family:Trajan; src:url('../fonts/trajan_pro_regular-webfont.ttf'); }
+		body  		{ background:#FFF; padding-top:46px; font-family:"Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:18px; line-height:1.42857; color:#545454; font-weight:300; }
+		
+
+		/* Estilo para un mensaje a pantalla completa */
+				.html, .html body 					{ width:100%; height:100%; padding:0px; margin:0px; }
+
+		
+		/* Estilos generales */
+				a 									{ color:#333; }
+				h1, h2, h3, h4, h5, h6				{ /*font-family:Trajan;*/ /*margin-top: 25px !important; margin-bottom: 12.5px !important;*/ }
+				h1 									{ font-size:2em; }
+				h2 									{ font-size:1.4em; }
+				/*.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img { display: block; width:100%; height:auto; }*/
+				
+				h1.tituloBV 						{ font-size:2.2em; }
+				#frameAdministracion				{ width: 100%; overflow: hidden; }
+
+				
+				
+		/* Estilo para margenes */
+				.padding5px 						{ padding:5px; }
+				.padding1em							{ padding:1em; }
+				.hackAjusteAlto 					{ display:block; height:0; clear:both; visibility:hidden; }
+				.cursorPointer						{ cursor:pointer; }
+				.padding_1em						{ padding:1em; }
+				.padding1em0em						{ padding:1em 0em; }
+				.cursorMove							{ cursor:move; }
+				.contenidoBodyCentral				{ padding-top: 46px; }
+				.cursorHelp							{ cursor:help; }
+
+				
+		/* Estilo */
+				.anchoCompleto						{ width:100%; }
+				.anchoAltoFull						{ width:100%; height:100%; }
+				.textoNoBreak						{ white-space:nowrap; }
+				.objetoOculto						{ display:none; }
+				.textoBreak							{ word-break:break-all; }
+
+				.tablaAnchoFull						{ display:table; width:100%; }
+				.tablaCentrada						{ display:table; margin:0 auto; height:100%; }
+				.tablaAnchoAltoCompleto				{ display:table; width:100%; height:100%; }
+						.pseudoTR					{ display:table-row; }
+						.celdaCentradaVertical		{ display:table-cell; vertical-align:middle; }
+				.tabla-centrada						{ display:table; margin:0 auto; }
+				.tablaAnchoAltoCompletoSinBordes	{ display:table; width:100%; height:100%; border-spacing:0px; }
+						
+				.lineaSeparacion					{ margin:1em 0em; background:url(../../Assets/Plantilla/line01.gif) repeat-x center; }
+				
+				.elementoConSombra 					{ box-shadow:0px 0px 4px #666; }
+
+
+		/* Estilo para modificar la posición de un objeto */
+				.floatRight						{ float:right; clear:right; }
+				.hackAjusteAlto 				{ display:block; height:0; clear:both; visibility:hidden; }
+				.vcenter 						{ display:inline-block; vertical-align: middle; float: none; }
+
+
+		/* Estilo para el nombre del Sistema */
+				.nomSistema						{ font-family:Trajan; margin:0 auto; /*display:table-cell;*/ vertical-align:middle; text-align:center; }
+						.nomSistema h2			{ font-size:2.2em; padding:0em; margin:0em; font-weight:bold; color:#FFF; background:none; text-align:center; box-shadow:none; }
+						.nomSistema h3			{ text-align:center; padding:0em; margin:0 auto; font-weight:normal; font-size:1em; color:#FFF; }
+
+						
+						
+		/* Estilo para modificar un Panel */
+				.panel-boton					{ float:right; margin-top:-26px; }
+				
+				
+		/* Estilo modificatorio a elementos bootstrap */
+				.glyphicon-derecho				{ float:right; margin-top:-24px; right:1em; }
+				
+				.col-barra-administracion		{ padding:5px; }
+
+				@media (min-width:645px) {
+						#formaLogin .input-sm	{ max-width:100px;  }
+				}
+				
+				
+		/* Modificación al header de la plantilla */
+				@media (max-width:868px) {
+						#herramientas, #login	{ text-align:center; padding:5px 0px; }
+				}
+				@media (min-width:869px) {
+							#login				{ text-align:justify; }
+							#herramientas		{ text-align:right; }
+				}
+				#herramientas									{ text-align:justify; }
+						.row-footer-gob-mx [class*='col-']		{ margin-bottom:60px; }
+						.row-footer-gob-mx [class*='col-'] h2 	{ font-size: 18px; font-weight:300; margin-bottom:15px; }
+						.row-footer-gob-mx [class*='col-'] a	{ color:#FFF; display:block; }
+						
+				.font-changer { position:fixed; left:0; margin-top:38px; left:15px; }
+						.font-changer button { display:block; background:none; box-shadow:0px 0px 5px 0px rgba(0,0,0,0.2); border:1px solid white; outline:0; border-radius:5px; width:35px; height:35px; text-align:center; font-size: 13px; margin-bottom:7px; background:#FFF; }
+
+				
+				
+		/* Modificación del cintillo de Usuario */
+				#InfoGeneral 							{ padding:0.5em 1em; text-align:right; }
+						#InfoGeneral span 				{ border-left:#F0F0F0 solid 3px; padding:0.5em 1em; margin:0em; }
+						#InfoGeneral span img 			{ vertical-align:middle; }
+				
+				
+		/* Modificación a las imagenes en un contenido */
+				.Contenido_texto img.center-block		{ padding-bottom:2em; }
+				
+
+
+		/* Estilo para el formulario de Acceso al Sistema */
+				.cuadroFormaAcceso											{ border:#CCC solid 2px; border-spacing:0.6em 0.3em; box-shadow:0px 0px 3px #999; min-height:550px; background:#F0F0F0; padding:1em; font-size:0.8em; }
+						.cuadroFormaAcceso .lista_lineal_basica				{ list-style:none; }
+						.cuadroFormaAcceso .lista_lineal_basica li			{ display:inline-block; background:url(../../Assets/generales/bullet-purple-alt.png) left center no-repeat; padding-left:2.2em; padding-right:0.8em; }
+						.areaDependencias									{ background:url(../../Content/assets/plantilla/separador.png) center right no-repeat; background-size:contain; }
+						@media (min-width:992px){
+									.col-md-celda 	{ vertical-align:middle; display:table-cell; }
+									.col-md-logos	{ width:60%; }
+						}
+
+		/* Estilo para el menú de navegación en la plantilla establecida */
+				.navbar-modificado											{ background:#393c3e; border:none; border-radius:0px; font-size:16px; min-height:46px; }
+						.navbar-header-modificado .navbar-toggle			{ background:black; border:#333 solid 1px; }
+						.navbar-header-modificado .icon-bar 				{ background-color:#333; }
+						.navbar-header-modificado h2						{ line-height:6px; font-family:Trajan; font-size:2em; text-align:justify; color:#FFF; }
+						.navbar-header-modificado h2 a						{ color:#FFF; text-decoration:none; }
+						.navbar-modificado #navbar-estilo-template			{ margin-right:-15px; }
+
+				@media (min-width:768px) {
+						.navbar .navbar-nav 								{ margin:0px; padding:0px; }
+						.navbar-collapse-modificado							{ margin:0px; padding:0px; overflow:hidden; }
+								#navbar-estilo-template li 					{ display:inline-block; text-align:center; float:none; position:static; }
+								#navbar-estilo-template a 					{ color:white; line-height:25px; padding-top:10.5px; padding-bottom:10.5px; padding-left:10px; }
+								#navbar-estilo-template li a:hover 			{ background:black; text-decoration:underline; }
+								
+								#navbar-estilo-template li ul				{ position:absolute; display:none; z-index:1; left:0; right:0; text-align:right; background:#000; }
+								#navbar-estilo-template li:hover ul 		{ display:inline; }
+								#navbar-estilo-template li ul li 			{ padding:10.5px 0px; margin:0px 5px; }
+
+						ul.contenedorLogin									{ background:none !important; }
+								.cuadroFormaAccesoIntranet					{ display:table; float:right; }
+						.cuadroFormaAcceso									{ min-height:100%; }
+				}
+
+				@media (max-width:767px) {
+						.navbar .navbar-nav									{ margin:0px; padding:0px; }
+						.navbar-collapse-modificado							{ border:#CCC solid 1px; padding-left:0px; max-height:100% !important; padding:0px; overflow:hidden !important; }
+								#navbar-estilo-template li a 				{ color:white; line-height:25px; }
+								#navbar-estilo-template li a:hover 			{ background:black; text-decoration:underline; }
+								#navbar-estilo-template li .caret			{ float:right; z-index:100; width:25px; height:25px; display:block; border-top:25px solid; border-right:25px solid transparent; border-left:25px solid transparent; }
+								#navbar-estilo-template li ul				{ display:none; position:static; margin:0px; padding:0px; }
+								#navbar-estilo-template li:hover>a 			{ background:#000; text-decoration:underline; }
+								#navbar-estilo-template li:hover ul			{ display:none; background:#000; }
+								#navbar-estilo-template li li 				{ margin:0px 0px; padding:5px 0px; list-style:none; }
+								#navbar-estilo-template li li a				{ white-space:pre-wrap; padding:2px 0px; }
+								#navbar-estilo-template li li a:hover		{ text-decoration:underline; background:none; border:0px; }
+						
+						ul.contenedorLogin .container						{ float:none; padding:0px; margin:0px; }		
+								.cuadroFormaAccesoIntranet					{ display:table; width:100%; position:static !important; }
+				}
+
+				
+		/* Estilo para el menu para la Administracion */
+				.navbar-administracion										{ box-shadow:#999 0px 3px 3px; background:url(../../Assets/generales/fondo_01.jpg); /*top:46px; margin-bottom:92px;*/ }
+						.navbar-administracion col-botones-administracion 	{ padding:0em 2em; }
+				.btn-modal-personal											{ background:none; float:right; box-shadow:none; margin-right:-20px; margin-top:-20px; }
+
+
+						
+	    /* Estilo para el pie de pagina de la plantilla establecida */
+			    #pie_pagina #vinetaEscudo							{ background:url(../../assets/plantilla/line01.gif) repeat-x center; height:120px; margin-bottom:1.5em; }
+                        #pie_pagina #vinetaEscudo span				{ background:url(../../assets/plantilla/logoHeader02.png) #FBFBFB no-repeat center; width:120px; height:120px; display:table; margin:0 auto; }
+                        #pie_pagina #pie_direccion					{ text-align:center; padding-bottom:2em; font-style:normal; color:#808080; }
+						
+						.main-footer 								{ background-color:#28292a; min-height:56px; color:white; padding:20px 0 30px; text-align:left; font-size: 14px; }
+						.main-footer .list-info						{ line-height:auto; background-color:#393b3c; padding:30px 0px 70px; margin-bottom:30px; }
+						.main-footer a 								{ color:#4a90e2; }
+						
+				.lista_redes_pie_pagina 							{ text-align:left; margin-top:1em; margin-bottom:-3em; float:left; clear:both; position:relative; z-index:1; }
+						.lista_redes								{ list-style:none; padding:0em; margin:0px; }
+						.lista_redes li								{ text-align:left; display:inline-block; margin-left:0; padding:0.2em; }
+						.lista_redes span							{ display:none; }
+						.lista_redes a 								{ width:32px; height:32px; display:block; margin:0em auto; }
+						
+				.space_bottom										{ margin-top:100px; }
+
+				@media (max-width:644px) {
+						.lista_redes_pie_pagina						{ margin:0px; padding:0px; float:none; }
+				}
+
+
+		/* Estilo para el control de tiempo */		
+				.campoConIcono { position:relative; cursor:pointer !important; }
+						.campoConIcono input[type="text"]	{ cursor:pointer !important; }
+						.campoConIcono .glyphicon			{ float:right; margin-top:-24px; right:1em; }
+
+						span.campoConIcono .glyphicon		{ top:-6px; right:0px; }
+						@media (max-width:767px) {	span.campoConIcono .glyphicon { position:relative; float:right; top:-35px; } }
+
+
+		/* Estilos comunes en el sitio */
+				/* Estilo para la redirección a sitios externos */
+						#c_salida									{ position:fixed; top:0; left:0; width:100%; height:100%; background-color:#000; }
+						#caja_salida								{ position:fixed; top:150px; left:0; width:38%; background-color:#FFF; margin-right:30%; margin-left:30%; padding:4px; display:table; border-radius:4px; }
+								#contenido_salida 					{ background-color:#e2e2e2; text-align:center; padding-top:0.5em; }
+								#contenido_salida h4				{ border-style:none; color:#1B8F5B }
+								#contenido_salida p					{ margin-bottom:0.5em;}
+								#contenido_salida a					{ color:#BA2025;}
+								#liga_cancelar						{ background-color:#FFF; color:#666; text-decoration:none; font-size:0.8em; margin-top:2.5em; padding:1em; text-transform:uppercase; }
+								#liga_cancelar a					{ text-transform:uppercase; padding:5px; color:#BA2025; }
+								#liga_cancelar a:hover				{ background-color:#666; color:#e6e6e6; }
+								
+								
+				/* Estilo para modificar elementos en el sitio */
+						.imagenContenido_left 						{ float:left; padding-right:1em; padding-bottom:1em; }
+						.imagenContenido_right 						{ float:right; padding-left:1em; padding-bottom:1em; }
+
+		
+				/* Estilo para los sidebar del lado izquierdo. Tomado de http://www.3solarmasses.com/corgi-bootstrap/. Template Corgi */
+						.corgi_feed_well							{ background-color:#EFEFEF; box-shadow: 0px 0px 4px #666; border:#FFF solid 1px; margin-bottom:2.5em; padding:5px; }
+								.sidebar_title						{  }
+								.sidebar_title h2					{ font-family:"Times New Roman"; font-style:italic; color:#333; padding:0em; margin:0px 10px 30px; }
+								.sidebar_title .plecaTexto			{ background:#EFEFEF; padding:0px 5px; }
+								.sidebar_interior					{ padding:10px; }
+								.sidebar_interior ul				{ list-style:none; margin:0em; padding:0em; }
+								.sidebar_interior ul li				{ padding:0em 0em 0.3em 1.4em; background:url(../../Assets/generales/bullet-green-alt.png) 2px 5px no-repeat; border-bottom:#FDFDFD solid 1px; }
+								.sidebar_interior ul li a			{ color:#3A3A3A; text-decoration:none; }
+								.sidebar_interior ul li a:hover		{ color:#BA2025; }
+								.sidebar_interior ul li li:last-child{ border:none; }
+								.feed_body							{ padding:20px; border-bottom:1px solid #efefef; margin-bottom:0; }
+								.fieldset_css						{ border:#CCC solid 1px; margin-top:-40px; padding-top:20px; }
+								.sidebar_title .plecaSubtitulo		{ color:none; text-align:justify; background:none; }
+						
+						.bloqueListado								{ }
+								.bloqueListado ul					{ list-style:none; margin:1em; padding:0em; }
+								.bloqueListado ul li				{ border-bottom: 1px solid #EFEFEF; padding:1em; padding-left:5em; text-align:justify; }
+								.bloqueListado ul li a 				{ text-decoration:none; }
+								.bloqueListado .btn_mas_menos		{ float:right; margin-right:1em; cursor:pointer; font-weight:bold; }
+						
+						.ficha-collapse								{ }		
+								.ficha-collapse .panel-title a		{ font-size: 18px; text-decoration: none; }
+								.ficha-collapse .panel-title a:active { color:#10C7E0; }
+								.ficha-collapse .panel-heading		{ padding: 20px 25px; position: relative; }
+								.panel-title						{ margin-top:0; font-size:21px; }
+								.collpase-button					{ border: 1px solid #555; outline: 0; background: 0 0; display: block; width: 30px; height: 30px; border-radius: 50%; position: absolute; right: 15px; top: 50%; margin-top: -15px; right: 25px; font-size:20px; }
+										.collpase-button:before 			{ width: 18px; height: 1px; top: 50%; left: 5px; }
+										.collpase-button.collapsed:after { width:1px; height:18px; top:5px; left:50%; }
+										.collpase-button.collapsed:after, .collpase-button:before { background-color:#777; position: absolute; display: block; content: " "; }
+
+								
+						.autor_nota 								{ color:#AEAEAE; text-align:jusitify; margin:2em 0em; font-size:0.8em; clear:both; }
+
+						.listaLigas li								{ background:url(../../Assets/generales/connect.png) left center no-repeat; background-size:48px 48px; }
+						.IconoCarpeta								{ background:url(../../Assets/generales/iconFolder.png) left center no-repeat; background-size:48px 48px; }
+						.IconoWord									{ background:url(../../Assets/generales/iconWord.png) left center no-repeat; background-size:48px 48px; }
+						.IconoExcel									{ background:url(../../Assets/generales/iconExcel.png) left center no-repeat; background-size:48px 48px; }
+						.IconoPpoint								{ background:url(../../Assets/generales/iconPpoint.png) left center no-repeat; background-size:48px 48px; }
+						.IconoAdobe									{ background:url(../../Assets/generales/iconAdobe.png) left center no-repeat; background-size:48px 48px; }
+						.IconoOtro									{ background:url(../../Assets/generales/iconOtro.png) left center no-repeat; background-size:48px 48px; }
+						.IconoPc									{ background:url(../../Content/assets/generales/computer256x256.png) no-repeat 10px center; background-size:48px 48px; }
+						.IconoImagen								{ background:url(../assets/generales/picture256x256.png) 10px center no-repeat; background-size:48px 48px; }
+						.IconoVideo									{ background:url(../assets/generales/video256x256.png) 10px center no-repeat; background-size:48px 48px; }
+						.IconoMail									{ background:url(../assets/generales/mail256x256.png) 10px center no-repeat; background-size:48px 48px; }
+						.IconoUsuario								{ background:url(../assets/generales/user256x256.png) 10px center no-repeat; background-size:48px 48px; }
+
+						
+						.plecaSubtitulo								{ /*color:#BA2025;*/ text-align:justify; }
+								.plecaSubtitulo .plecaLinea			{ margin:10px 0 70px; border-top:#dce0e0 solid 1px; display:block; }
+								.plecaSubtitulo .plecaLinea::before { content:" "; width:35px; height: 5px; background-color: #d0021b; display:block; position:absolute; } 
+
+								
+						.tituloContenido h3							{ font-size:1.5em; color:#666; padding-bottom:15px; text-align:center; background:url(../assets/plantilla/tweet-shadow.png) bottom center no-repeat; }
+						
+						
+				/* Estilos utilizados para el menu en le despliegue de Menu (Tipo 13) */
+						.contenido .tabsDeMenu						{ text-align:center; background:url(../../Assets/generales/fondoMenu01.png) bottom; }
+								.contenido .tabsDeMenu li			{ margin-bottom:0px; float:none; display:inline-block; margin:0px 5px; }
+								.contenido .tabsDeMenu a			{ margin-top:12.2px; }
+								.contenido .tabsDeMenu a:hover 		{ color:#4D92DF; }
+								.contenido .tabsDeMenu li.active a	{ text-transform:uppercase; color:#D0021B; background:#FFF; border-bottom:#FFFFFF solid 1px; }
+								
+								@media (max-width:520px) {
+											.contenido .tabsDeMenu	{ background:none; }
+													.contenido .tabsDeMenu li { width:100%; background:url(../../Assets/generales/fondoMenu01.png) bottom repeat-x; }
+													.contenido .tabsDeMenu a  { margin:5px 10px 0px; }
+								}
+								@media (min-width:768px) and (max-width:991px) {
+											.contenido .tabsDeMenu	{ background:none; }
+													.contenido .tabsDeMenu li { width:100%; background:url(../../Assets/generales/fondoMenu01.png) bottom repeat-x; }
+													.contenido .tabsDeMenu a  { margin:5px 10px 0px; }
+								}
+
+
+
+				/* Estilo para una noticia */								
+						.noticiaResumen								{ font-style:italic; font-weight:bold; text-align:justify; }
+						.noticiasDatos 								{ text-align:right; margin:1.5em 0em; list-style:none; }
+						.noticiaImagen 								{ float:left; margin:2em 1.7em 1em 0em; background:#F0F0F0; padding:0.5em; padding-bottom:2.5em; border:#DFDFDF solid 1px; border-radius:10px; }
+						.noticiaImagen:hover						{ box-shadow:#CCC 0px 0px 3px; }
+						
+						.bloqueListaNoticias 						{}
+								.bloqueListaNoticias h5 			{ color:#BA2025; }
+								.bloqueListaNoticias .noticiaImagen { float:none; margin:5px; padding:1em; }
+								.bloqueListaNoticias .elementoLista	{ border-bottom:#CCC solid 1px; margin:0.5em 1em; }
+								.bloqueListaNoticias .elementoLista a { color:#1B8F5B; text-align:justify; }
+								.bloqueListaNoticias p 				{ margin:5px; }
+								.bloqueListaNoticias .img-generica	{ max-height:150px; }
+
+
+				/* Estilo para un evento o documento */
+						.box { border-radius:3px; box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); padding:10px 25px; text-align:center; margin-top:60px; background:#FFF; }
+								.box-icon { margin-top:-61px; padding-bottom:1em; border-bottom:#EEE solid 3px; }
+								.box-info { font-size:1.1em; }
+
+								
+				/* Tipos de lista */
+						.lista_lineal_basica						{ list-style:none; }
+								.lista_lineal_basica li				{ display:inline-block; background:url(../../Assets/generales/bullet-green-alt.png) left center no-repeat; padding-left:2.2em; padding-right:0.8em; }
+								.lista_lineal_basica li:first-child { background:none; padding-left:0em; }
+								.lista_lineal_basica li a			{ text-decoration:none; }
+								.lista_lineal_basica li a:hover 	{ color:#BA2025; }
+
+						.lista_sin_dots li 							{ background:none; }
+
+						.lista_tipo_C								{ list-style:none; padding:0px; margin:0px; }
+									.lista_tipo_C li 				{ margin:0px; margin-bottom:0.2em;border-bottom:1px solid #CCC; }
+									.lista_tipo_C li a 				{ display:block; text-decoration:none; color:#666; background:url(../../Assets/generales/bullet-green-alt.png) left center no-repeat; padding:3px 2px 3px 25px; }
+									.lista_tipo_C li a:hover 		{ color:#BA2025; }
+									
+						.lista_tipo_D li a:hover 					{ color:#BA2025; text-decoration:none; }
+						
+						.lista_tipo_E li							{ border-bottom:#DDD solid 1px; padding:5px; padding-left:25px; list-style-position:inside; background:url(../../Assets/generales/bullet-orange-alt.png) center left no-repeat; }
+								.lista_tipo_E li a:hover 			{ color:#BA2025; text-decoration:none; }
+								
+						.lista_bloque_inputs 						{ margin:0px; padding:0px; list-style:none; }
+								.lista_bloque_inputs li				{ border-bottom:#DDD solid 1px; padding:5px 0px 5px 20px; text-align:justify; }
+								
+						.lista-estilo-01							{ list-style:none; }
+								.lista-estilo-01 li 				{ background:url(../../Assets/generales/bullet-blue-alt.png) left center no-repeat; padding-left:1.5em; }
+								
+						.lista-estilo-02							{ list-style:none; }
+								.lista-estilo-02 li 				{ padding-left:1em; display:table; width:100%; border-spacing:4px 0px; }
+								.lista-estilo-02 li span 			{ display:table-cell; border-bottom:#DDD solid 1px; }
+								.lista-estilo-02 span.iconoAdjunto 	{ width:3em; }
+								
+						.lista-estilo-03 							{ list-style:none; margin:0px; padding:0px; }
+								.lista-estilo-03 li 				{ text-align:justify; padding-bottom:3px; }
+
+						
+
+				/* Botones */								
+						.contenedorCuadro 							{ border:#CCC solid 1px; background:#FFF; }
+						.listaElementosFade							{ text-align:center; display:block; }
+								.listaElementosFade div				{ opacity:0; filter:alpha(opacity='0'); }
+								.listaElementosFade a				{ display:block; height:100%; text-decoration:none; border-spacing:0.2em; }
+								.listaElementosFade a > span 		{ padding:5px; display:block; margin:10px; }
+								.listaElementosFade a .area_texto	{ min-height:60px; }
+								.listaElementosFade a .areaImagen	{ max-height:270px; text-align:center; vertical-align:middle; border-bottom:#CCC solid 1px; }
+
+						
+						.botonElementosFade 						{ text-align:center; margin:5px; width:100%; display:block; }
+								.botonElementosFade a 				{ height:1em; width:1.2em; display:inline-block; text-decoration:none; }
+								.botonElementosFade .normal 		{ background:url(../../Assets/generales/circulosSmall.png) no-repeat 4px -18px; }
+								.botonElementosFade .seleccion		{ background:url(../../Assets/generales/circulosSmall.png) no-repeat 4px 3px; }
+
+
+						.btn-eliminar-lista { float:right; }
+						@media (max-width:645px) {
+								.btn-eliminar-lista					{ display:block; float:none; text-align:right; }
+						}
+
+				/* Estilo para los formularios publicos */								
+						.codigoCaptcha .areaCaptcha					{ background:#F0F0F0; border:#FFF solid 3px; border-radius:10px; padding:1em 3em; }
+								.codigoCaptcha img					{ vertical-align:middle; }
+								.codigoCaptcha .dermar				{ border-bottom:#FFF dashed 1px; }
+						
+						.bloqueObjetos								{ clear:both; padding:0em 2em; border:#F6F6F6 solid 3px; margin-top:2.4em; border-radius:10px; }
+								.bloqueObjetos_titulo 				{ background-color:#FFF; /*font-family:Trajan; font-size:1.2em;*/ top:-0.8em; left:-20px; position:relative; display:inline-block; padding:0px 10px; color:#4D92DF; }
+								.bloqueObjetos_titulo img			{ float:left; padding:0em 0.5em 0em 0em; vertical-align:middle; margin-top:-0.2em; }
+
+						.tabs_body									{ background:url(../../Assets/Plantilla/bg-01.jpg) center repeat-y; }
+						.tabs_header								{ position:relative; width:100%; background:url(../assets/plantilla/border-01.png) center no-repeat; height:27px; top:10px; }
+						.tabs_pie									{ position:relative; width:100%; background:url(../assets/plantilla/border-01.png) center no-repeat; height:27px; bottom:10px; }
+						
+						ul.tabs										{ margin:7px 0px 0px; padding:0; width:100%; background:url(../assets/plantilla/border-01.png) center 28px no-repeat; border-bottom:#CCC solid 1px; text-align:center; }
+								ul.tabs li 							{ display:inline-block; border:#CCC solid 1px; padding:0em; margin-bottom:-1px; background:#F6F6F6; }
+								ul.tabs li a						{ padding:0.5em 1em; text-decoration:none; /*font-family:Trajan;*/ color:#666; background:none; display:block; }
+								ul.tabs li a:hover					{ background:#fff; }
+								ul.tabs li.seleccionado 			{ border-bottom:#FFF solid 1px; background:#FFF; }
+								ul.tabs li.seleccionado a			{ color:#4D92DF; }
+								
+						.tab_contenido								{ display:table; width:100%; border-spacing:5px; margin-top:7px; }
+						
+						.fileUpload									{ position:relative; overflow:hidden; margin:10px; }
+								.fileUpload input.upload			{ position:absolute; top:0; right:0; margin:0; padding:0; font-size:20px; cursor:pointer; opacity:0; filter: alpha(opacity=0); }
+								
+
+				/* Estilo para el agrupador de objetos que componen una galeria */								
+						.agrupadorObjetosMultimedia 														{ max-width:700px; border:#AEAEAE solid 2px; border-radius:10px; padding:1em; margin-top:1em; margin-bottom:1em; background:#FFF; clear:both; position:relative; }
+								.agrupadorObjetosMultimedia h3												{ text-align:center; font-size:1.3em; color:#1D7043; background:url(../../Assets/Plantilla/post-bottom-shadow.png) no-repeat bottom center; padding-bottom:15px; }
+								.agrupadorObjetosMultimedia .imagen-pricipal								{ background:url(../../Assets/Plantilla/indicator.gif) center no-repeat; border:#CCC solid 1px; padding:1em; }
+								.agrupadorObjetosMultimedia	.thumbnail-galeria .contorno-thumbnail			{ float:left; position:absolute; margin-left:-9999em; bottom:2.5em; }
+								.agrupadorObjetosMultimedia	.thumbnail-galeria img							{ border:#BA2025 solid 1px; padding:5px; background:#BA2025; }
+								.agrupadorObjetosMultimedia	.thumbnail-galeria:hover .contorno-thumbnail	{ margin-left:0px; margin-top:3em; }
+								.agrupadorObjetosMultimedia	.thumbnail-galeria .flecha-thumbnail			{ width:20px; height:20px; display:block; border-top:#BA2025 solid 10px; border-left:transparent solid 10px; border-right:transparent solid 10px; }
+								
+								.area_Video							{ background:url(../../Assets/Plantilla/indicator.gif) center no-repeat; }
+								
+								#agrupadorRecorrido					{ background:url(../../Assets/Plantilla/indicator.gif) center no-repeat; height:600px; }
+								
+								
+				/* Estilo para un arbol de elementos */				
+						.contenedorArbol	{ }
+								.contenedorArbol ul 			{ padding:0px; margin-left:4em; border-left:#CCC dotted 1px; list-style:none; }
+								.contenedorArbol ul li			{ margin-left:-27px; padding:3px 10px; }
+								.contenedorArbol ul li span		{ margin:0px 5px; cursor:pointer; }
+								.contenedorArbol ul li a		{ font-size:1.1em; }
+								.contenedorArbol ul li a:hover	{ color:#1D7043; cursor:pointer; }
+								
+
+				/* Ajustes al Mapa de Sitio */
+						.resaltarEdicion  a						{ color:#1D7043; }
+								
+
+				/* Estilo para un arbol de elementos (Categorias en BV) */
+								.contenedorArbol .dropdown-menu				{ padding:0px; margin:0em; list-style:none; }
+								.contenedorArbol .dropdown-menu li			{ margin:0px; padding:2px 5px; }
+								.contenedorArbol .dropdown-menu li a:hover	{ color:#000; }
+
+								
+								
+								
+				/* Estilo para el contenedor de Mis Mensajes */
+						.contenedorMensajes 					{ padding:1em; background:#FFF; border-bottom:#DDD solid 1px; margin-bottom:1em; }
+						
+						
+				/* Estilo para la Sección multimedia */
+						.contenedorMultimedia										{ background:#D0D1D2; box-shadow:#999 0px 0px 15px; padding:0px; }
+								.celda_concepto_multimedia							{ border-left:#FFF solid 1px; padding:0px; }
+								.celda_concepto_multimedia:first-child				{ border-left:none; }
+								.contenedor_imagen_multimedia						{ background:url(../../Assets/Plantilla/indicator.gif) center no-repeat; min-height:236px; }
+								.contenedor_imagen_multimedia img, .contenedor_imagen_multimedia object 		{ border:#F0F0F0 solid 3px; }
+								.contenedorMultimedia h4							{ color:#BA2025; }
+								.lista_elementos_x_concepto							{ min-height:110px; }
+								
+						@media (max-width:868px) {
+								.fb-page								{ width:100%; background:url(../../Assets/Plantilla/fondoCarrusel_2.png) center top; }
+							
+								.contenedorMultimedia					{ margin-top:1em; }
+										.celda_concepto_multimedia				{ border:none; border-top:#FFF solid 1px; padding-top:15px; }
+										.celda_concepto_multimedia:first-child	{ border:none; }
+						}
+
+						.lista_multimedia 								{ list-style:none; margin:0px; padding:0px; }
+								.lista_multimedia li 					{ padding:8px; margin:0px; text-align:center; color:#333; }
+								.lista_multimedia li a 					{ text-decoration:none; }
+								.lista_multimedia li a:hover			{ color:#BA2025; }
+								
+						.padding15_5 									{ padding:15px 5px; }
+						
+						.btnCarrusel									{ background:url(../../Assets/Plantilla/sprites.png) no-repeat; color:#FFF; font:11px/29px serif; height:35px; text-align:center; display:table; margin:0 auto; border-spacing:0em; cursor:pointer; text-decoration:none; text-transform:uppercase; }
+								.btnCarrusel.green.medium				{ background-position:-541px -61px; }
+								.btnCarrusel.green.medium:hover			{ background-position:-128px -321px; }
+								.btnCarrusel.medium 					{ width:92px; }
+								.btnCarrusel a 							{ color:#FFF; text-decoration:none; }
+								
+
+								
+				/* Estilo para el buscador en la Biblioteca Virtual */
+						#paginacionBarra								{ width:100%; border-bottom:#F0F0F0 solid 3px; font-family:Trajan; font-size:1.2em; padding:0.5em 0em; margin-bottom:1em; }
+
+						.post 											{ background-color:#FFF; box-shadow:0 0 5px #CCC; border:#CCC solid 1px; padding:5px; margin-bottom:1em; }
+								.post .content							{ padding:15px; }
+								.post .title 							{ padding:0em 1em; text-align:center; color:#EF4A4C; word-break:break-all; }
+
+
+						.listaObjetoArbol								{ margin:1em; padding:0em; }
+						.listaObjetoArbol ul							{ margin-bottom:2em; }
+						.listaObjetoArbol li							{ list-style:none; border-left:#CCC dotted 1px; }
+						.listaObjetoArbol li .Img_span					{ margin-left:-8px; display:inline-block; width:15px; text-align:center; background:#FFF; }
+								.listaObjetoArbol li img 				{ vertical-align:middle; }
+						.listaObjetoArbol li .Img_dot					{ margin-left:-3px; }
+						.lineaResaltada									{ background:#FFC; border-bottom:#CCC dotted 1px; }
+
+
+				/* Ventana editor flotante */
+						.btn-close-flotante								{ background:none; float:right; box-shadow:none; margin-right:-20px; margin-top:-20px; }
+						
+
+				/* Estilo para usado en los foros */
+						.lineaTransparente								{ border-bottom:transparent solid 1px; }
+						.agrupadorComentarios							{ padding:1em; border-top:#F0F0F0 solid 3px; }
+								.noAprobado								{ background:#F7F2F2; margin-top:1em; margin-bottom:1em; }
+								.noAprobado	 h4							{ color:#FF0000; background:url(../../Assets/Plantilla/post-bottom-shadow.png) center bottom no-repeat; padding-bottom:15px; }
+						.ownerReplica									{ font-size:1.2em; margin-right:1em; color:#069; }
+
+						#formaFlotanteDrag								{ position:absolute; display:none; z-index:100; }
+								#formaFlotanteDrag .btnClose			{ float:right; margin-top:-15px; margin-right:-15px; cursor:pointer; }
+								#formaFlotanteDrag .panel 				{ box-shadow:#666 0px 0px 1em; }
+						.col-md-static									{ position:static; }
+						.formaForo #imgCaptcha							{ min-width:230px; height:60px; }
+
+						#mensaje_detalle								{ max-width:600px; }
+						
+						
+				/* Estilo para el Mensaje al Usuario */
+						#AvisoMensaje							{ position:fixed; bottom:2em; right:3em; width:100%; z-index:100; }
+								#AvisoMensaje .cuerpoMensaje	{ background:url(../../Assets/herramientasUsuario/Users.png) no-repeat #FFF right bottom; padding:1em; float:right; border:#269abc double 5px; border-radius:10px; font-size:1em; max-width:600px; box-shadow:#333 0px 0px 5px; }
+						@media (max-width:644px) {
+								#AvisoMensaje							{ position:fixed; width:100%; z-index:100; right:0em; left:0em; }
+										#AvisoMensaje .cuerpoMensaje	{ width:100%; margin:0em auto; }
+						}
+
+
+				/* Estilo para el cuadro Inicial */
+						.cuadroConCintillo										{ border:#CCC solid 2px; padding:1em; border-spacing:0.6em 0.3em; box-shadow:0px 0px 3px #999; min-height:550px; background:#FFF; }
+								.cuadroConCintillo .cuadroContenidoInicio		{ padding:1em 7em; }
+								@media (max-width:644px) {
+											.cuadroConCintillo .cuadroContenidoInicio { padding:1em; }
+								}
+								
+						.cintillo												{ float:left; margin-left:-29px; margin-top:-0.7em; }
+								.cintillo h4									{ line-height:37px; display:table; width:100%; border-spacing:0px; font-family:Trajan; }
+								.cintillo h4 span								{ display:table-cell; }
+								.cintillo h4 span.izquierdo						{ width:11px; background:url(../assets/plantilla/post-time-ribbon.png) left top repeat-y; }
+								.cintillo h4 span.centro						{ padding:0px 10px; background:url(../assets/plantilla/post-time-ribbon_barra.png) left top; }
+								.cintillo h4 span.derecho						{ width:13px; background:url(../assets/plantilla/post-time-ribbon.png) right top repeat-y; white-space:nowrap; }
+								
+				/* Barras de colores en el pie de Pagina en la página de acceso */
+						.barra01 { height:10px; background-color:#F3B42C; }
+						.barra02 { height:10px; background-color:#232322; }
+						.barra03 { height:10px; background-color:#6C8C2F; }
+						
+
+				/* Estilo para tabla */						
+						.table-reporte-bi									{ border-bottom:#DDD solid 1px; border-right:#DDD solid 1px; border-top:#DDD solid 1px; background:#FFF; }
+								.table-reporte-bi th						{ text-align:center; border-left:#DDD solid 1px; }
+								.table-reporte-bi td						{ text-align:right; border-top:#DDD solid 1px; border-left:#DDD solid 1px; }
+								.table-reporte-bi td.celdaRelleno			{ border-top:#FFF solid 1px; background:#FFF; }
+								.table-reporte-bi tr:hover td.pseudoColSpan { border-left:#F5F5F5 solid 1px; }
+								.table-reporte-bi td.pseudoColSpan			{ border-left:#FFF solid 1px; }
+								.table-reporte-bi .celdaTotal				{ background:#FFD; font-weight:900; }
+								.table-reporte-bi .celdaSubtotal			{ background:#EEE; }
+
+						.table-reporte-basico								{ border:#DDD solid 1px; }
+								.table-reporte-basico th					{ text-align:center; }
+								.table-reporte-basico td 					{ text-align:right; }
+
+
+
+		@media (max-width:480px) {
+				[class*='col-'] .plecaSubtitulo		{ /*background:url(../../Assets/Plantilla/tweet-shadow.png) center bottom no-repeat;*/ }
+				.corgi_feed_well .plecaSubtitulo	{ background:none; }
+				
+				/* Cambios a los tabs */
+						ul.tabs						{ background:none; }
+								ul.tabs li 			{ width:100%; }
+		}
+
+
+		@media (min-width:481px) and (max-width:868px) {
+				[class*='col-'] .plecaSubtitulo		{ /*background:url(../../Assets/Plantilla/post-bottom-shadow.png) center bottom no-repeat;*/ }	
+				.corgi_feed_well .plecaSubtitulo	{ background:none; }
+		}
+
+
+		@media (min-width:768px) {
+				#headerLogo.row { display: table; width:100%; }
+						#headerLogo [class*="col-"] { float:none; display:table-cell; vertical-align: middle; }
+		}
+
+
+		@media (min-width:992px) {
+				/* Modificacion a la ventana modal */
+						.modal-lg					{ width:1240px; }
+		}

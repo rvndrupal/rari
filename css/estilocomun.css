@@ -1,0 +1,505 @@
+@charset "utf-8";
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../imagenes/patern.png);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+#cuerpo {
+    background-color: #FFFFFF;
+    margin: auto;
+    width: 960px;
+    font-family: "Adobe Caslon Pro";
+}
+
+#encabezado {
+    height: 107px;
+    width: 665px;
+    background: url(../imagenes/header1.png);
+    background-size: cover;
+    float: left;
+    background-color: #FFF;
+}
+
+#header {
+    background-image: url(../imagenes/header_linea.jpg);
+    background-repeat: repeat;
+    width: 960px;
+    height: 113px;
+}
+
+#rari_tit {
+    font-size: 24px;
+    text-align: center;
+    width: 276px;
+    height: 22px;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    color: #808184;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFF;
+    /*font-weight:bold;	*/
+}
+
+#menu {
+    background-image: url(../imagenes/menubg.jpg);
+    background-repeat: repeat;
+    width: 960px;
+    height: 55px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu>li {
+    padding: 0;
+    float: left;
+}
+
+#menu li a {
+    background-image: url(../imagenes/menubg.jpg);
+    font-family: "Trajan Pro", "Adobe Caslon Pro";
+    font-size: 10px;
+    font-weight: 500;
+    display: block;
+    text-decoration: none;
+    line-height: 53px;
+    text-align: center;
+}
+
+#menu li a:hover {
+    color: #BA2025;
+}
+
+#footer {
+    float: left;
+    background-image: url(../imagenes/footer.jpg);
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 960px;
+    background-color: #ffffff;
+}
+
+#punto {
+    background-image: url(../imagenes/menubg.jpg);
+    width: 10px;
+    height: 54px;
+    font-weight: 400;
+    line-height: 50px;
+    text-align: center;
+}
+
+#bloque1 a {
+    width: 210px;
+    height: 54px;
+}
+
+#acerca a {
+    width: 80px;
+    height: 54px;
+}
+
+#marco a {
+    width: 207px;
+    height: 54px;
+}
+
+#internacional a {
+    width: 124px;
+    height: 54px;
+}
+
+#difusion a {
+    width: 76px;
+    height: 54px;
+}
+
+#bloque2 a {
+    width: 212px;
+    height: 54px;
+}
+
+.lineasverticales {
+    background-image: url(../imagenes/lineasverticales.jpg);
+    background-repeat: repeat-x;
+    width: 960px;
+    height: 25px;
+}
+
+.etiqueta {
+    padding: 3px 3px;
+    margin-left: -20px;
+    position: relative;
+    width: 30%;
+    border-radius: 5px 0px 0px 0px;
+    box-shadow: 1px 1px 5px #000;
+    -moz-box-shadow: 1px 1px 5px #000;
+    -webkit-box-shadow: 1px 1px 5px #000;
+    margin-bottom: 8px;
+}
+
+.etiqueta-der {
+    padding: 3px 3px;
+    margin-right: -20px;
+    position: relative;
+    width: 20%;
+    border-radius: 5px 0px 0px 0px;
+    box-shadow: 1px 1px 5px #000;
+    -moz-box-shadow: 1px 1px 5px #000;
+    -webkit-box-shadow: 1px 1px 5px #000;
+    float: right;
+    background-color: #600;
+}
+
+.etiqueta-completa {
+    padding: 3px 3px;
+    margin-left: -20px;
+    margin-right: -20px;
+    border-radius: 5px 5px 0px 0px;
+    position: relative;
+    box-shadow: 1px 1px 5px #000;
+    -moz-box-shadow: 1px 1px 5px #000;
+    -webkit-box-shadow: 1px 1px 5px #000;
+    margin-bottom: 20px;
+}
+
+.triangulo-izq {
+    border-top: 10px solid #999;
+    width: 0px;
+    height: 0px;
+    line-height: 0px;
+    border-left: 20px solid transparent;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+}
+
+.triangulo-der {
+    border-top: 10px solid #999;
+    width: 0px;
+    height: 0px;
+    line-height: 0px;
+    border-right: 20px solid transparent;
+    position: absolute;
+    top: 100%;
+    right: 0px;
+}
+
+.recuadro-interior {
+    padding: 10px 10px;
+    background-image: url(../imagenes/patron.png);
+    background-size: contain;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-family: "Trajan Pro";
+    font-size: 16px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #000;
+    -moz-box-shadow: 1px 1px 5px #000;
+    -webkit-box-shadow: 1px 1px 3px #333;
+}
+
+.rectangulo-opciones {
+    padding: 3px 3px;
+    width: 127px;
+    height: 139px;
+    margin-left: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.rectangulo-opciones:hover {
+    margin-top: 0px;
+    box-shadow: 1px 1px 5px #000;
+    -moz-box-shadow: 1px 1px 5px #000;
+    -webkit-box-shadow: 1px 1px 5px #000;
+}
+
+.cuadro {
+    background-color: #999;
+    width: 130px;
+    height: 130px;
+    float: left;
+    margin-left: 10px;
+    cursor: pointer;
+    border: #777 1px solid;
+    border-radius: 5px;
+}
+
+.cuadro:hover {
+    box-shadow: 1px 1px 5px #000;
+    -moz-box-shadow: 1px 1px 5px #000;
+    -webkit-box-shadow: 1px 1px 5px #000;
+    border: #555 1px solid;
+}
+
+.cuadro-modulo {
+    box-shadow: 1px 1px 5px #000;
+    -moz-box-shadow: 1px 1px 5px #000;
+    -webkit-box-shadow: 1px 1px 5px #000;
+    border: #ccc 3px solid;
+    border-radius: 5px;
+    margin-left: 35%;
+    position: relative;
+    width: 251px;
+    height: 250px;
+}
+
+.imagen-modulo {
+    width: 95px;
+    height: 130px;
+    margin-left: 10px;
+    margin-top: 30px;
+    background-repeat: no-repeat;
+}
+
+.cuadro-modulo-chico {
+    box-shadow: 1px 1px 5px #000;
+    -moz-box-shadow: 1px 1px 5px #000;
+    -webkit-box-shadow: 1px 1px 5px #000;
+    margin-left: 365px;
+    top: -5px;
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.imagen-cuadro-modulo {
+    margin-left: 26%;
+    height: 65%;
+    width: 65%;
+    background-repeat: no-repeat;
+}
+
+#imagen-vegetal {
+    background-image: url(../imagenes/salud_vegetal_peq.png);
+}
+
+#imagen-animal {
+    background-image: url(../imagenes/salud_animal_peq.png);
+}
+
+#imagen-inocuidad {
+    background-image: url(../imagenes/inocuidad_peq.png);
+}
+
+#imagen-inspeccion {
+    background-image: url(../imagenes/inspeccion_peq.png);
+}
+
+#imagen-sanidad {
+    background-image: url(../imagenes/sanidad_acuicola_peq.png);
+}
+
+#imagen-noticias {
+    background-image: url(../imagenes/noticias_peq.png);
+}
+
+#imagen-autorizacion-comunnicados {
+    background-image: url(../imagenes/autorizacion_peq.png);
+}
+
+#imagen-listado-comunnicados {
+    background-image: url(../imagenes/listado_peq.png);
+}
+
+#imagen-editar-catalogo {
+    background-image: url(../imagenes/editar_peq.png);
+}
+
+#imagen-estadisticas {
+    background-image: url(../imagenes/estadisticas_peq.png);
+}
+
+#imagen-directorio-usuarios {
+    background-image: url(../imagenes/directorio_peq.png);
+}
+
+#imagen-agregar-comunicado {
+    background-image: url(../imagenes/agregar_comunicado_peq.png);
+}
+
+#imagen-lista-comunicado {
+    background-image: url(../imagenes/lista_comunicados_peq.png);
+}
+
+#loginimagecenter {
+    background-image: url(../imagenes/loginimagecenter.jpg);
+    width: 683px;
+    height: 423px;
+}
+
+.campo_titulo {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 42px;
+}
+
+.popup {
+    display: none;
+    border-radius: 5px;
+    background-color: #FFF;
+    border: 3px solid #CCC;
+    box-shadow: 1px 1px 8px #FF0;
+    -moz-box-shadow: 1px 1px 8px #FF0;
+    -webkit-box-shadow: 1px 1px 8px #FF0;
+    z-index: 100000;
+}
+
+.interior {
+    background-image: url(../imagenes/patron.png);
+    padding: 10px;
+    height: 100%;
+    background-size: contain;
+}
+
+.fila {
+    color: #333;
+    font-size: 14px;
+    border-bottom: #FFF 2px groove;
+}
+
+.fila:hover {
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.imagen-lista {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-position: center;
+}
+
+.ico-lista {
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: center;
+}
+
+.pestana {
+    margin-top: 20px;
+    width: 100%;
+    height: 30px;
+    background-color: #CCC;
+    border-radius: 10px 10px 0px 0px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: center;
+}
+
+.pestana:hover {
+    margin-top: 10px;
+    height: 40px;
+}
+
+.triangulo_inf {
+    position: absolute;
+    margin-left: 225px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #CCC;
+}
+
+.resumen {
+    color: #FFF;
+    font-size: 12px;
+    text-transform: none;
+}
+
+.nombre {
+    color: #9F0;
+}
+
+
+/* Modificaciones para estilos de seguimientos. LVC 13-Octubre-2017 */
+
+.etiquetaSegAlta {
+    padding: 3px 3px;
+    margin-left: -20px;
+    position: relative;
+    width: 30%;
+    border-radius: 5px 0px 0px 0px;
+    box-shadow: 1px 1px 5px #000;
+    -moz-box-shadow: 1px 1px 5px #000;
+    -webkit-box-shadow: 1px 1px 5px #000;
+    margin-bottom: 8px;
+    background-color: red;
+}
+
+.etiquetaSegMedia {
+    padding: 3px 3px;
+    margin-left: -20px;
+    position: relative;
+    width: 30%;
+    border-radius: 5px 0px 0px 0px;
+    box-shadow: 1px 1px 5px #000;
+    -moz-box-shadow: 1px 1px 5px #000;
+    -webkit-box-shadow: 1px 1px 5px #000;
+    margin-bottom: 8px;
+    background-color: yellow;
+}
+
+.etiquetaSegOtra {
+    padding: 3px 3px;
+    margin-left: -20px;
+    position: relative;
+    width: 30%;
+    border-radius: 5px 0px 0px 0px;
+    box-shadow: 1px 1px 5px #000;
+    -moz-box-shadow: 1px 1px 5px #000;
+    -webkit-box-shadow: 1px 1px 5px #000;
+    margin-bottom: 8px;
+    background-color: blue;
+}
+
+.recuadro-interiorSeg {
+    padding: 10px 10px;
+    background-image: url(../imagenes/patron.png);
+    background-size: contain;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-family: "Trajan Pro";
+    font-size: 16px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #000;
+    -moz-box-shadow: 1px 1px 5px #000;
+    -webkit-box-shadow: 1px 1px 3px #333;
+}
+
+.popupSeg {
+    display: none;
+    border-radius: 5px;
+    background-color: #FFF;
+    border: 3px solid #CCC;
+    box-shadow: 1px 1px 8px #FF0;
+    -moz-box-shadow: 1px 1px 8px #FF0;
+    -webkit-box-shadow: 1px 1px 8px #FF0;
+    z-index: 100000;
+    width: 550;
+    position: absolute;
+    left: 100px;
+    top: 150px;
+}
+
+.interiorSeg {
+    background-image: url(../imagenes/patron.png);
+    padding: 10px;
+    height: 100%;
+    background-size: contain;
+}

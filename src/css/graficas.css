@@ -1,0 +1,24 @@
+.graf1 {
+    margin: 34px 0 0 74px;
+    padding: 2px;
+    width: 800px;
+}
+
+.titgraf {
+    color: #999;
+    margin: 0 0 0px 39%;
+}
+
+.graf2 {
+    margin: 76px 0 0 221px;
+    width: 466px;
+}
+
+.gra_riesgo {
+    margin: 0 0 0 25% !important;
+}
+
+select#comArea {
+    width: 230px;
+    margin: 7px 0 10px 1px;
+}

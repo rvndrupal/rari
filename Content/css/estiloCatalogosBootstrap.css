@@ -1,0 +1,242 @@
+/* Hoja de estilo personalizada para los catalogos */
+		/* Estilo para listas */
+			.listaDosBloques			{ display:table; border-spacing:5px; width:100%; margin-bottom:2em; }
+			.listaDosBloques div		{ display:inline-block; min-width:45%; border-bottom:#EEE solid 1px; padding:5px; margin:0px 10px; }
+			.objetoOculto				{ display:none; }
+
+
+		/* Estilo para establecer una ancho y alto completo en la Pagina */
+				#htmlAnchoAltoFull, #htmlAnchoAltoFull body	{ width:100%; height:100%; padding:0px; margin:0px; }
+
+				/*html, body		{ overflow-x:hidden; overflow-y:auto; width:100%; height:100%; margin:0px; padding:0px; }*/
+
+
+		/* Estilo para el validador de formas */
+				.tfvHighlight			{ color:#F00; }
+				.negritas				{ font-weight:bold; }
+				.cursorPointer			{ cursor:pointer; }
+				.cursorMove				{ cursor:move; }
+				.cursorHelp 			{ cursor:help; }
+				.cursorPointerForzado	{ cursor:pointer !important; }
+				
+				
+		/* Estilo para modificar la posición de un objeto */
+				.floatRight			{ float:right; clear:right; }
+				.hackAjusteAlto 	{ display:block; height:0; clear:both; visibility:hidden; }
+
+
+		/* Estilo para mensajes de alerta */
+				.alert-editado		{ display:none; margin-bottom:2em; position:absolute; }
+
+				.alertaFlotante				{ position:fixed; top:0; left:0; display:none; }
+				.alertaFlotante .pseudoTD	{ vertical-align:bottom; padding:0em 2em; }
+
+
+		/* Estilo para comportamiento tipo Tabla */				
+				.tablaAnchoAltoCompleto	{ display:table; width:100%; height:100%; }
+						.pseudoTabla				{ display:table; }
+						.celdaCentradaVertical		{ display:table-cell; vertical-align:middle; }
+						.pseudoTR					{ display:table-row; }
+						.pseudoTD					{ display:table-cell; }
+						.altoCompleto				{ height:100%; }
+						.anchoCompleto				{ width:100%; }
+						.anchoAltoCompleto 			{ width:100%; height:100%; }
+						.pseudoTablaAnchoAltoFull	{ display:table; width:100%; height:100%; border-spacing:1em; }
+						.spanCelda					{ display:table-cell; padding:2px 5px; float:left; min-width:150px; text-align:center; }
+
+
+		/* Estilo para la barra de Progreso */
+				body.barraProgreso { background:#F0F0F0; width:100%; height:100%; padding:0px; margin:0px; }
+						.barraProgreso table.barraCarga	{ width:100%; }
+						.barraProgreso td				{ width:10px; font-size:1px; height:10px; border:#FFF outset 1px; }
+						.barraProgreso .datosCargados	{ background:#9F0; }
+						.barraProgreso a				{ text-decoration:none; font-style:italic; font-size:10px; text-align:right; color:#000; }
+
+			
+		/* Estilo para texto */
+				.textoNoBreak					{ white-space:nowrap; }
+				.separacionPadding_1em_0em		{ padding:1em 0em; }
+				.separacionPaddingBottom_1em 	{ padding-bottom:1em; }
+				.separacionPadding_1em 			{ padding:1em; }
+				.separacionMarginBottom_5em 	{ margin-bottom:5em; }
+				.padding5px 					{ padding:5px; }
+				.textoBreak						{ word-break:break-all; }
+				.textoNormal					{ font-weight:normal; }
+				.paddingMargin0px				{ padding:0px; margin:0px; }
+				
+				
+		/* Estilo para modificar un Panel */
+				.panel-boton		{ float:right; margin-top:-26px; }
+				
+
+		/* Estilo para el Area drag an drop */
+				#areaDragAndDrop { border:#0B85A1 dotted 2px; color:#92AAB0; text-align:center; vertical-align:middle; padding:2em; margin:1em 0em; font-size:200%; }
+				.fileUpload { position: relative; overflow:hidden; margin:10px; }
+				.fileUpload input.upload { position: absolute; top:0; right:0; margin:0; padding:0; font-size:20px; cursor:pointer; opacity: 0; filter: alpha(opacity=0); }
+				
+				
+		/* Estilos propios de un catalogo administrador */
+				.lista_imagenes_galeria_admin	{ list-style:none; margin-left:-40px; margin-top:20px; }
+				.positionRelative 				{ position:relative; }
+				.glyphicon-derecho				{ float:right; margin-top:-24px; right:1em; }
+				.color-location					{ color:red; }
+				
+
+		/* Estilo para un arbol de elementos */				
+				.contenedorArbol								{ list-style:none; }
+						.contenedorArbol ul 					{ padding:0px; margin-left:4em; border-left:#CCC dotted 1px; list-style:none; }
+						.contenedorArbol ul li					{ margin-left:-27px; padding:3px 10px; }
+						.contenedorArbol ul li span				{ margin:0px 5px; cursor:pointer; }
+						.contenedorArbol ul li a:hover			{ cursor:pointer; }
+						.contenedorArbol .btnMasMenosGlyphicon	{ width:25px; background:#FFF; text-align:center; display:inline-block; }
+
+
+		/* Modificación de un nav */						
+				.nav-pills-centrado									{ text-align:center; }
+						.nav-pills-centrado li 						{ border:#CCC solid 1px; float:none; display:inline-block; text-align:center; min-width:180px; margin:2px 0px; }
+						.nav-pills-centrado > li.active > a,
+						.nav-pills-centrado > li.active > a:hover,
+						.nav-pills-centrado > li.active > a:focus 	{ color:#FFF; background:#428bca; }
+						
+						
+		/* Ventana editor flotante */
+				.btn-close-flotante					{ background:none; float:right; box-shadow:none; margin-right:-20px; margin-top:-20px; }
+
+
+		/* Estilo para el Tooltip en el Administrador de Libros Virtuales */
+				.FormaLibro:hover .tooltipLibro		{ margin-left:0px; }
+						.tooltipLibro				{ border:#069 solid 2px; padding:5px; float:left; position:absolute; text-align:center; margin-left:-9999em; margin-top:2em; }
+						
+						
+		/* Estilo para Imagenes */
+				.img-video-catalogo					{ max-width:250px; }
+				
+				
+		/* Estilo para el Captcha dentro de un administrador de Catalogo */
+				.codigoCaptcha .areaCaptcha					{ background:#F0F0F0; border:#FFF solid 3px; border-radius:10px; padding:1em 3em; }
+						.codigoCaptcha .areaCaptcha img		{ vertical-align:middle; max-width:230px; max-height:60px; }
+
+
+
+		@media (min-width:992px) {
+				html, body 		{ width:100%; height:100%; padding:0; margin:0; }
+				.altoFull 		{ height:100%; }
+				.formaRelativa 	{ position:relative; }
+				
+				.barraBusquedaSemiFija { position:fixed; }
+		}
+
+
+		/* Estilo para modificar campos en los formularios */
+				a 						{ color:#000000; }
+				a:hover 				{ text-decoration:none; color:#069; }
+
+				.areaEdicionFlotante 	{ position:absolute; width:100%; display:none; }
+				
+				.botonesEdicionFixed 	{ background-color:#FFF; border-top:#EEE solid 1px; padding:3px; }
+				
+				.inputTextoRico			{ display:none; }
+		
+
+
+		/* Estilo para el control de tiempo */		
+				.campoConIcono { position:relative; cursor:pointer !important; }
+						.campoConIcono input[type="text"]	{ cursor:pointer !important; }
+						.campoConIcono .glyphicon			{ float:right; margin-top:-24px; right:1em; }
+
+						span.campoConIcono .glyphicon		{ top:-6px; right:0px; }
+						@media (max-width:767px) {	span.campoConIcono .glyphicon { position:relative; float:right; top:-35px; } }
+
+
+		/* Estilo para modificar un navbar */
+				.navbar-fondoPersonal	{ background:#F0F0F0; }
+				
+
+		/* Estilo para tabla */				
+				.table-reporte-bi									{ border-bottom:#DDD solid 1px; border-right:#DDD solid 1px; border-top:#DDD solid 1px; }
+						.table-reporte-bi th						{ text-align:center; border-left:#DDD solid 1px; }
+						.table-reporte-bi td						{ text-align:right; border-top:#DDD solid 1px; border-left:#DDD solid 1px; }
+						.table-reporte-bi td.celdaRelleno			{ border-top:#FFF solid 1px; }
+						.table-reporte-bi tr:hover td.pseudoColSpan { border-left:#F5F5F5 solid 1px; }
+						.table-reporte-bi td.pseudoColSpan			{ border-left:#FFF solid 1px; }
+						.table-reporte-bi .celdaTotal				{ background:#FFD; font-weight:bold; }
+						
+
+		/* Estilo para una ficha de perfil */						
+				.user-details { padding:0; padding-bottom:1em; }
+						.user-details .user-heading		{ text-align:center; }
+						.user-details .user-image		{ position: relative; z-index: 1; width:100%; text-align: center; }
+						.user-image img					{ clear:both; margin:auto; padding:1em; background:#FFF; border-radius:50px; border:#CCC solid 3px; }
+						.user-details .user-info-block	{ width:100%; position:relative; margin-top:-45px; padding:1em; padding-top:45px; background:url(../../Assets/generales/mapamundi.png) repeat-x top right; border:#CCC solid 3px; }
+						
+
+		/* Estilo para una lista */						
+				.lista_abrir_cerrar									{ }
+						.lista_abrir_cerrar .pseudoUL				{ margin-bottom:2em; list-style:none; padding-left:4em; }
+						.lista_abrir_cerrar .pseudoLI				{ padding:2px 10px; display:table; width:100%; border-bottom:#DDD solid 1px; }
+						.lista_abrir_cerrar .celda					{ display:table-cell; white-space:nowrap; }
+						
+						
+				ul.lista_abrir_cerrar								{ list-style:none; margin:0; padding:0; }
+						ul.lista_abrir_cerrar ul 					{ margin-bottom:2em; list-style:none; padding-left:4em; }
+						ul.lista_abrir_cerrar li span 				{ padding:2px 10px; display:table-cell; border-bottom:#DDD solid 1px; }
+						
+						
+				.lista_tipo_C										{ list-style:none; padding:0px; margin:0px; }
+							.lista_tipo_C li 						{ margin:0px; margin-bottom:0.2em;border-bottom:1px solid #DDD; padding-left:25px; background:url(../../Assets/generales/bullet-blue-alt.png) left center no-repeat; }
+							.lista_tipo_C li a 						{ display:block; text-decoration:none; color:#666;  padding:3px 2px 3px 25px; }
+							.lista_tipo_C li a:hover 				{ color:#BA2025; }
+							
+							
+				.listaArchivos										{ list-style:none; margin:0em; padding:0em; }
+						.listaArchivos li							{ display:table; margin:0em; width:100%; border-spacing:0.5em 0em; }
+						.listaArchivos li span						{ display:table-cell; border-bottom:#CCC dotted 1px; word-break:break-all; }
+						.listaArchivos span.opciones				{ text-align:center; width:8em; }
+						.listaArchivos img							{ border:0; vertical-align:middle; }
+
+
+		/* Botones para mostrar la lista de pasos */						
+				.wizard { margin:0 auto; background: #fff; }
+						.wizard .nav-tabs							{ position:relative; margin:0 auto; margin-bottom:0; border-bottom-color:#DDD; }
+						.wizard > div.wizard-inner 					{ position:relative; }
+						.connecting-line 							{ height:2px; background:#DDD; position:absolute; width:65%; margin:0 auto; left:0; right:0; top:50%; z-index:1; }
+						span.round-tab 								{ width:40px; height: 40px; display:inline-block; border-radius:100px; background:#fff; border:#DDDDDD solid 2px; z-index: 2; position:absolute; left:0; text-align:center; font-size:25px; }
+						.wizard .nav-tabs > li.active > a, .wizard .nav-tabs > li.active > a:hover, .wizard .nav-tabs > li.active > a:focus { color: #555555; cursor: default; border:0; border-bottom-color:transparent; }
+						.wizard li.active span.round-tab 			{ background: #fff; border:#4D92DF solid 2px; color:#4D92DF; }
+						.wizard .nav-tabs > li 						{ width: 33%; }
+						.wizard li.active:after 					{ content:""; position:absolute; left:47%; margin:0 auto; bottom:0px; border:transparent solid 10px; border-bottom-color:#4D92DF; }
+						.wizard .nav-tabs > li a 					{ width:40px; height:40px; margin:20px auto; border-radius: 100%; padding:0; }
+
+
+		/* Estilo para barras de navegacion */
+				.nav-tabs-center	{ text-align:center; }
+						.nav-tabs-center li { float:none; display:inline-block; text-align:center; }
+						@media (max-width:644px) {
+									.nav-tabs-center li		{ display:block; }
+									.nav-tabs-center li a	{ border:#EEE solid 1px; }
+						}
+						
+
+		/* Estilo para una barra deslizante (reloj lineal) */
+				#slider-range { border:#DDD solid 1px; height:16px; border-radius:1em; position:relative; }
+						.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { font-weight:normal; color:#555555; }
+						.ui-slider-horizontal .ui-slider-handle								{ top:-7px; margin-left:-11px; border:none; }
+						.ui-slider .ui-slider-handle										{ position:absolute; z-index:2; width:2em; height:2em; border:none; cursor:pointer; -ms-touch-action:none; touch-action:none; background:url(../../Assets/generales/flechaUp.png) center no-repeat; }
+						
+						.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br	{ border-bottom-right-radius:4px; }
+						.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl	{ border-bottom-left-radius:4px; }
+						.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr		{ border-top-right-radius:4px; }
+						.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl		{ border-top-left-radius:4px; }
+						
+						.ui-slider-horizontal .ui-slider-range								{ top:0; height:100%; }
+						.ui-slider .ui-slider-range											{ position: absolute; z-index:1; font-size:1em; display:block; }
+						.ui-widget-header													{ float:left; width:0%; height:100%; font-size:12px; line-height: 20px; color:#ffffff; text-align: center; background-color: #dff0d8; -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15); box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15); background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); background-size: 40px 40px; }
+				
+				.barraHoras																	{ width:100%; display:table; border-spacing:0px 2px; }
+						.horaCelda															{ display:table-cell; width:4.16%; text-align:left; }
+						.rangoLineasMinuto													{ border-left:#DDD solid 4px; height:5px; }
+
+
+		/* Coloca una barra de progreso en un formulario */
+				.areaEsperaBasico { width:100%; height:100%; position:absolute; top:0; left:0; opacity:0.8; filter:alpha(opacity=80); background:#FFF; padding:1em; }
+				.contenedorBarra { background:#FFF; padding:1em; }
