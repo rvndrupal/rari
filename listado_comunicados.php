@@ -52,6 +52,7 @@
 	}
 	else if(!isset($_GET['idAlert']))
 	{
+		error_reporting(0);
 		if(!isset($modulo))
 			$modulo=$_GET['mod'];
 
@@ -69,6 +70,9 @@
 		if(isset($_GET['tipo'])&&$_GET['tipo']>0)
 			$query_catalogos =$query_catalogos.' and idTipoComunicado='.$_GET['tipo'];
 
+		$fecUno="";
+		$fecDos="";	
+
 		$fecUno=$_GET['da1'];
 		$fecDos=$_GET['da2'];
 
@@ -85,6 +89,7 @@
 
 		if(!isset($_GET['da1'])&&!isset($_GET['da2']))
 			$query_catalogos =$query_catalogos.' and fecha_registro=curdate()';
+			//$query_catalogos =$query_catalogos.' and fecha=\''.$fecUno.'\'';
 
 		if(isset($emitir))
 		{
