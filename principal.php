@@ -32,7 +32,7 @@
 				<table align="center">
 					<!-- <tr><td><a href="bienvenido.php" ><input id="btnAccesoAdm" style="width:150px; border:1px #666666 solid;" name="btnAccesoAdm" type="button" value="Módulo Administrador"/></a></td></tr> -->
 					<!-- <tr><td><input id="btnAccesoAdm" style="width:150px; border:1px #666666 solid;" name="btnAccesoAdm" type="button" value="Módulo Administrador" onclick="location.href='/bienvenido.php';" /></td></tr> -->
-					<tr><td><input id="btnAccesoAdm" style="width:150px; border:1px #666666 solid;" name="btnAccesoAdm" type="button" value="Cambiar de usuario" onclick="location.href='/index.php';" /></td></tr>
+					<tr><td><input id="btnAccesoAdm" style="width:150px; border:1px #666666 solid;" name="btnAccesoAdm" type="button" value="Cambiar de usuario" onclick="location.href='http://localhost/rari/index.php';" /></td></tr>
 				</table>
 		 	</div>
 

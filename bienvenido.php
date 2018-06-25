@@ -84,7 +84,8 @@
 								<!-- Autorizacion de comunicados habilitada para superadministrador y Enlace designado. LVC 5-Junio-2018-->
 								<?php if($nivel==1 or $nivel==4){?>
 								<td align="center">
-									<div class="rectangulo-opciones" onclick="window.location='listado.php?emitir=0';">
+									<!--<div class="rectangulo-opciones" onclick="window.location='listado.php?emitir=0';">-->
+									<div class="rectangulo-opciones" onclick="window.location='http://10.24.17.53:567/listado.php?emitir=0';">
 										<div class="recuadro-interior" style="height:116px; font-size:10px;">
 											<table align="center" height="100%" width="100%">
 												<tr><td height="75" ><div id="imagen-autorizacion-comunnicados" class="imagen-cuadro-modulo"></div></td></tr>

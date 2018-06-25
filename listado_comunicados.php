@@ -151,7 +151,7 @@
 		<?php }?>
 	<tr>
 		<!-- <td colspan="5" bgcolor="#333333" align="center"> -->
-		<td colspan="<?php echo ($esAdmin)? "7":"6";?>" bgcolor="#333333" align="center"><?php
+		<td colspan="<?php echo ($esAdmin)? "7":"8";?>" bgcolor="#333333" align="center"><?php
 			echo $ides;
 			echo $totalRows_catalogos." elemento(s) encontrado(s)."; ?></td>
 	</tr>
@@ -339,7 +339,7 @@
 	/*Llamada a webservice de envio de correo*/
 	function enviarComunicado($id)
 	{
-		//$objClienteSOAP = new soapclient('http://localhost/wsRARI/Service.asmx?WSDL');
+		//$objClienteSOAP = new soapclient('http://localhost/rari/wsRARI/Service.asmx?WSDL');
 		$objClienteSOAP = new soapclient('http://sinavef.senasica.gob.mx/wsRARI/Service.asmx?WSDL');
 		$params = array();
 		$params['idAlerta'] = $id;
