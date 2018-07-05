@@ -215,7 +215,7 @@
 	{
 		mysql_select_db($database_rari_coneccion, $rari_coneccion);
 	
-		$query_catalogos = "SELECT *FROM tbl_comunicado where id=".$id;
+		$query_catalogos = "SELECT * FROM tbl_comunicado where id=".$id;
 		$catalogos = mysql_query($query_catalogos, $rari_coneccion) or die(mysql_error());
 		$totalRows_catalogos= mysql_num_rows($catalogos);
 		if($totalRows_catalogos<1)

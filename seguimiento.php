@@ -154,7 +154,7 @@
 					<div class="lineasverticales"></div>
 	 
 					<table width="100%">
-						<tr><td width="36%"><div class="campo_titulo"><h3 style="margin-left:20px; color:#333;">Tipo de Comunicado:<h3 /></div></td>
+						<tr><td width="36%"><div class="campo_titulo"><h3 style="margin-left:20px; color:#333;">Tipo de Comunicados:<h3 /></div></td>
 							<td width="64%">
 							<?php echo obtenerCatalogoSelectS(17,$database_rari_coneccion,$rari_coneccion,$modulo,$dataComunicado['idTipoComunicado']); ?>
 							</td></tr>
@@ -165,7 +165,7 @@
 					<table width="100%">
 						<tr><td width="36%"><div class="campo_titulo"><h3 style="margin-left:20px; color:#333;">Direcciones:<h3 /></div></td>
 							<td width="64%">
-							<?php echo obtenerCatalogoSelect(23,$database_rari_coneccion,$rari_coneccion,$modulo,$comunicado); ?>
+							<?php echo obtenerCatalogoSelect(23,$database_rari_coneccion,$rari_coneccion,$modulo,$comunicado,$dataComunicado['idTipoContaminacion']); ?>
 							</td></tr>
 					</table>
 
@@ -183,7 +183,7 @@
 	 
 					<table width="100%">
 						<tr><td width="36%"><div class="campo_titulo"><h3 style="margin-left:20px; color:#333;">Tipo de Contaminaci&oacute;n:<h3 /></div></td>
-							<td width="64%"><?php echo obtenerCatalogoSelectS(18,$database_rari_coneccion,$rari_coneccion,$modulo,$dataComunicado['idTipoComunicado']); ?></td></tr>
+							<td width="64%"><?php echo obtenerCatalogoSelectS(18,$database_rari_coneccion,$rari_coneccion,$modulo); ?></td></tr>
 					</table>
 					<?php }?>
 	 

@@ -130,6 +130,15 @@
 		$insertSQLseg ='INSERT INTO tbl_seguimiento (idComunicado, seguimientoResumen, seguimientoCambios) VALUES ('.$id_alerta.',\'Resumen Original \n'.$contenido.'\n************************************\', \'Alta de seguimiento. '.date().'\n \' )';
 		mysql_select_db($database_rari_coneccion, $rari_coneccion);
 		$Result2 = mysql_query($insertSQLseg, $rari_coneccion) or die(mysql_error());
+
+		//tabla seguimineto copia
+		/*
+		$insertSQLter ='INSERT INTO tbl_comunicado_copy (idTipoComunicado,idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro, mapa, idAreaUIS, seguimiento) VALUES ('.$tipo_comunicado.','.$tipo_contaminacion.', \''.$titulo.'\', \''.$contenido.'\', \''.$imagen.'\', '.$pdf.', '.$_SESSION['id'].', \''.$fecha.'\', '.$nivel_riesgo[0].', '.$nivel_alerta[0].', '.$estatus_fito.', 0, '.$area.', curdate(),'.$mapa.','.$id_area.', '.$seguimiento.')';
+	
+		mysql_select_db($database_rari_coneccion, $rari_coneccion);
+		$Result3 = mysql_query($insertSQLter, $rari_coneccion) or die(mysql_error());
+		$id_alerta = mysql_insert_id($rari_coneccion);*/
+
 	}
 	else
 	{
@@ -143,6 +152,16 @@
 	
 		mysql_select_db($database_rari_coneccion, $rari_coneccion);
 		$Result1 = mysql_query($updateSQLseg, $rari_coneccion) or die(mysql_error());
+
+		//seguimiento
+		$insertSQL ='INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro, mapa, idAreaUIS, seguimiento) VALUES ('.$tipo_comunicado.','.$tipo_contaminacion.', \''.$titulo.'\', \''.$contenido.'\', \''.$imagen.'\', '.$pdf.', '.$_SESSION['id'].', \''.$fecha.'\', '.$nivel_riesgo[0].', '.$nivel_alerta[0].', '.$estatus_fito.', 0, '.$area.', curdate(),'.$mapa.','.$id_area.', '.$seguimiento.')';
+		
+		mysql_select_db($database_rari_coneccion, $rari_coneccion);
+		$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+		$id_alerta = mysql_insert_id($rari_coneccion);
+
+
+		
 		
 		
 		$catalogos=array('det_comunicado_agente',
@@ -166,6 +185,8 @@
 			$insertSQL ='DELETE FROM '.$catalogos[$i].' WHERE idComunicado='.$IidComunicado;
 			mysql_select_db($database_rari_coneccion, $rari_coneccion);
 			$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+
+			
 		}
 	}
 
@@ -178,6 +199,8 @@
 			$insertSQL ='INSERT INTO det_comunicado_enlace (idComunicado, enlace) VALUES ('.$id_alerta.', \''.$arreglo_enlaces[$i].'\')';
 			mysql_select_db($database_rari_coneccion, $rari_coneccion);
 			$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+
+					
 		}
 	}
 	
