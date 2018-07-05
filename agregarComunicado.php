@@ -31,7 +31,8 @@
 
 	else
 	{
-		if (($_POST['cmb_nivel_riesgo'][0] == 3 or $_POST['cmb_nivel_riesgo'][0] == 4) and ($_POST['cmb_nivel_alerta'][0] == 5 or $_POST['cmb_nivel_alerta'][0] == 6))
+		//agregar lo ultimo
+		if (($_POST['cmb_nivel_riesgo'][0] == 3 or $_POST['cmb_nivel_riesgo'][0] == 4) and ($_POST['cmb_nivel_alerta'][0] == 5 or $_POST['cmb_nivel_alerta'][0] == 6) or ($_POST['cmb_resolucion'][0] == 6) or ($_POST['cmb_resolucion'][0] == 10))
 		{
 			$seguimiento= 1;
 		}

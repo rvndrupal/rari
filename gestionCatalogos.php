@@ -175,8 +175,14 @@
 		$row_catalogos = mysql_fetch_assoc($catalogos);
 		$totalRows_catalogos= mysql_num_rows($catalogos);
 		
+	   
+		
 		$salida='<select id="cmb_'.obtenerNombreTabla($cat).'" name="cmb_'.obtenerNombreTabla($cat).'[]" style="width:98%;" multiple="multiple">';
 		
+		//var_dump($row_catalogos);
+
+		
+
 		do 
 		{
 			$select="";
@@ -185,11 +191,21 @@
 				if(in_array($row_catalogos['id'],$selecciones))
 					$select=" selected='selected'";
 			}
+
+			//extra seleccionar curso
+			if ($row_catalogos['nombre']=="En curso") {
+				$select=" selected='selected'";				
+			}	
 			
-			if($totalRows_catalogos>0)
-				$salida=$salida.'<option'. $select.' value='.$row_catalogos['id'].'>'.$row_catalogos['nombre'].'</option>';				
+			 if($totalRows_catalogos>0)
+				$salida=$salida.'<option'. $select.' value='.$row_catalogos['id'].'>'.$row_catalogos['nombre'].'</option>';	
+
+
+				
+						
 		} 
 		while ($row_catalogos = mysql_fetch_assoc($catalogos));
+
 		
 		$salida=$salida.'</select>';
 		return $salida;
