@@ -131,13 +131,7 @@
 		mysql_select_db($database_rari_coneccion, $rari_coneccion);
 		$Result2 = mysql_query($insertSQLseg, $rari_coneccion) or die(mysql_error());
 
-		//tabla seguimineto copia
-		/*
-		$insertSQLter ='INSERT INTO tbl_comunicado_copy (idTipoComunicado,idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro, mapa, idAreaUIS, seguimiento) VALUES ('.$tipo_comunicado.','.$tipo_contaminacion.', \''.$titulo.'\', \''.$contenido.'\', \''.$imagen.'\', '.$pdf.', '.$_SESSION['id'].', \''.$fecha.'\', '.$nivel_riesgo[0].', '.$nivel_alerta[0].', '.$estatus_fito.', 0, '.$area.', curdate(),'.$mapa.','.$id_area.', '.$seguimiento.')';
-	
-		mysql_select_db($database_rari_coneccion, $rari_coneccion);
-		$Result3 = mysql_query($insertSQLter, $rari_coneccion) or die(mysql_error());
-		$id_alerta = mysql_insert_id($rari_coneccion);*/
+		
 
 	}
 	else
@@ -154,12 +148,8 @@
 		$Result1 = mysql_query($updateSQLseg, $rari_coneccion) or die(mysql_error());
 
 		//seguimiento
-		$insertSQL ='INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro, mapa, idAreaUIS, seguimiento) VALUES ('.$tipo_comunicado.','.$tipo_contaminacion.', \''.$titulo.'\', \''.$contenido.'\', \''.$imagen.'\', '.$pdf.', '.$_SESSION['id'].', \''.$fecha.'\', '.$nivel_riesgo[0].', '.$nivel_alerta[0].', '.$estatus_fito.', 0, '.$area.', curdate(),'.$mapa.','.$id_area.', '.$seguimiento.')';
 		
-		mysql_select_db($database_rari_coneccion, $rari_coneccion);
-		$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
-		$id_alerta = mysql_insert_id($rari_coneccion);
-
+	
 
 		
 		
@@ -189,6 +179,7 @@
 			
 		}
 	}
+	
 
 	if(isset($_POST['resultEnlaces']))
 	{
@@ -369,7 +360,164 @@
 		mysql_select_db($database_rari_coneccion, $rari_coneccion);
 		$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
 	}
+
+
+//SEGUIMIENTO
+	if($Result1){
+		$insertSQL_copy ='INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro, mapa, idAreaUIS, seguimiento) VALUES ('.$tipo_comunicado.','.$tipo_contaminacion.', \''.$titulo.'\', \''.$contenido.'\', \''.$imagen.'\', '.$pdf.', '.$_SESSION['id'].', \''.$fecha.'\', '.$nivel_riesgo[0].', '.$nivel_alerta[0].', '.$estatus_fito.', 0, '.$area.', curdate(),'.$mapa.','.$id_area.', '.$seguimiento.')';
+		
+		mysql_select_db($database_rari_coneccion, $rari_coneccion);
+		$Result1copy= mysql_query($insertSQL_copy, $rari_coneccion) or die(mysql_error());
+		$id_alerta = mysql_insert_id($rari_coneccion);
+
+		//Inserción de productos u hospederos   OK
+		$arreglo_productos=$_POST['cmb_productos'];
+		for ($i=0;$i<count($arreglo_productos);$i++)
+		{
+			$insertSQL ='INSERT INTO det_comunicado_productos (idComunicado, idProducto) VALUES ('.$id_alerta.', '.$arreglo_productos[$i].')';
+			mysql_select_db($database_rari_coneccion, $rari_coneccion);
+			$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+		}
+
+		//Inserción de oisas  OK
+	if(isset($_POST['cmb_oisas']))
+	{
+		$arreglo_oisas=$_POST['cmb_oisas'];;
+		for ($i=0;$i<count($arreglo_oisas);$i++) 
+		{
+			$insertSQL ='INSERT INTO det_comunicado_oisas (idComunicado, idOisa) VALUES ('.$id_alerta.', '.$arreglo_oisas[$i].')';
+			mysql_select_db($database_rari_coneccion, $rari_coneccion);
+			$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+		}
+	}
 	
+	//Inserción de PVIS   OK
+	if(isset($_POST['cmb_pvis']))
+	{
+		$arreglo_pvis=$_POST['cmb_pvis'];
+		for ($i=0;$i<count($arreglo_pvis);$i++)
+		{
+			$insertSQL ='INSERT INTO det_comunicado_pvis (idComunicado, idPvi) VALUES ('.$id_alerta.', '.$arreglo_pvis[$i].')';
+			mysql_select_db($database_rari_coneccion, $rari_coneccion);
+			$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+		}
+	}
+
+	//Inserción de PVIFS   OK
+	if(isset($_POST['cmb_pvifs']))
+	{
+		$arreglo_pvifs=$_POST['cmb_pvifs'];
+		for ($i=0;$i<count($arreglo_pvifs);$i++) 
+		{
+			$insertSQL ='INSERT INTO det_comunicado_pvifs (idComunicado, idPvif) VALUES ('.$id_alerta.', '.$arreglo_pvifs[$i].')';
+			mysql_select_db($database_rari_coneccion, $rari_coneccion);
+			$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+		}
+	}
+
+	//Inserción de fracciones
+	if(isset($_POST['cmb_fraccion']))
+	{
+		$arreglo_fraccion=$_POST['cmb_fraccion'];
+		for ($i=0;$i<count($arreglo_fraccion);$i++) 
+		{
+			$insertSQL ='INSERT INTO det_comunicado_fraccion (idComunicado, idFraccion) VALUES ('.$id_alerta.', '.$arreglo_fraccion[$i].')';
+			mysql_select_db($database_rari_coneccion, $rari_coneccion);
+			$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+		}
+	}
+
+	//Insercion de medidas implementadas
+	$arreglo_med_implementadas=$_POST['cmb_med_implementadas'];
+	for ($i=0;$i<count($arreglo_med_implementadas);$i++)
+	{
+		$insertSQL ='INSERT INTO det_comunicado_medidas_implementadas (idComunicado, idMedidaImplementada) VALUES ('.$id_alerta.', '.$arreglo_med_implementadas[$i].')';
+		mysql_select_db($database_rari_coneccion, $rari_coneccion);
+		$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+	}
+
+	//Insercion de medidas a implementar
+	$arreglo_med_implementar=$_POST['cmb_med_aimplementar'];
+	for ($i=0;$i<count($arreglo_med_implementar);$i++)
+	{
+		$insertSQL ='INSERT INTO det_comunicado_medidas_implementar (idComunicado, idMedidaImplementada) VALUES ('.$id_alerta.', '.$arreglo_med_implementar[$i].')';
+		mysql_select_db($database_rari_coneccion, $rari_coneccion);
+		$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+	}
+	
+	//Insercion de motivos
+	if (isset($_POST['cmb_motivos']))
+	{
+		$arreglo_motivos=$_POST['cmb_motivos'];
+		for ($i=0;$i<count($arreglo_motivos);$i++)
+		{
+			$insertSQL ='INSERT INTO det_comunicado_motivos (idComunicado, idMotivo) VALUES ('.$id_alerta.', '.$arreglo_motivos[$i].')';
+			mysql_select_db($database_rari_coneccion, $rari_coneccion);
+			$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+		}
+	}
+
+	//Insercion de riesgos
+	$arreglo_riesgos=$_POST['cmb_riesgo'];
+	for ($i=0;$i<count($arreglo_riesgos);$i++) 
+	{
+		$insertSQL ='INSERT INTO det_comunicado_riesgo (idComunicado, idRiesgo) VALUES ('.$id_alerta.', '.$arreglo_riesgos[$i].')';
+		mysql_select_db($database_rari_coneccion, $rari_coneccion);
+		$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+	}
+
+	//Insercion de reglamentaciones
+	$arreglo_reglamentacion=$_POST['cmb_reglamentacion'];
+	for ($i=0;$i<count($arreglo_reglamentacion);$i++) 
+	{
+		$insertSQL ='INSERT INTO det_comunicado_reglamentacion (idComunicado, idReglamentacion) VALUES ('.$id_alerta.', '.$arreglo_reglamentacion[$i].')';
+		mysql_select_db($database_rari_coneccion, $rari_coneccion);
+		$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+	}
+
+	//Insercione de reglamentos internacionales
+	if(isset($_POST['cmb_reglamentacion_int']))
+	{
+		$arreglo_reg_int=$_POST['cmb_reglamentacion_int'];
+		for ($i=0;$i<count($arreglo_reg_int);$i++) 
+		{
+			$insertSQL ='INSERT INTO det_comunicado_reglam_int (idComunicado, idReglaInt) VALUES ('.$id_alerta.', '.$arreglo_reg_int[$i].')';
+			mysql_select_db($database_rari_coneccion, $rari_coneccion);
+			$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+		}
+	}
+
+	//Insercion de resoluciones 
+	$arreglo_resolucion=$_POST['cmb_resolucion'];
+	for ($i=0;$i<count($arreglo_resolucion);$i++)
+	{
+		$insertSQL ='INSERT INTO det_comunicado_resolucion (idComunicado, idResolucion) VALUES ('.$id_alerta.', '.$arreglo_resolucion[$i].')';
+		mysql_select_db($database_rari_coneccion, $rari_coneccion);
+		$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+	}
+
+	//Insercion de localizaciones
+	$arreglo_localizaciones= explode ('°',$_POST['resultLocs']);
+	for($i=0;$i<count($arreglo_localizaciones)-1;$i++) 
+	{
+		$localizacion=explode ('|',$arreglo_localizaciones[$i]);
+		$pais=$localizacion[0];
+		$edo=count($localizacion)==6?$localizacion[1]:'null';
+		$mpo=count($localizacion)==6?$localizacion[2]:'null';
+		$otraLoc=count($localizacion)==6?$localizacion[3]:$localizacion[1];
+		$Lat=count($localizacion)==6?$localizacion[4]:$localizacion[2];
+		$Lon=count($localizacion)==6?$localizacion[5]:$localizacion[3];
+		$insertSQL ='INSERT INTO det_comunicado_localizacion (idComunicado, idPais, idEstado, idMunicipio, region, latitud, longitud) VALUES ('.$id_alerta.', '.$pais.', '.$edo.', '.$mpo.', \''.$otraLoc.'\', '.$Lat.', '.$Lon.')';
+
+		mysql_select_db($database_rari_coneccion, $rari_coneccion);
+		$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+	}
+
+
+	}//seguimineto global
+	//SEGUIMIENTO
+	
+
 	/*	
 	//enviando correo a interesado.
 
