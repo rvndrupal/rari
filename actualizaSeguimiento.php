@@ -105,7 +105,9 @@ $actulizado="falso";
         $estatus_fito='null';
 	}
 	
-	
+	if(isset($_POST['txtfolio'])){
+		$folio=$_POST['txtfolio'];		
+	}
     
     
     $buscarSQL ='select idSeguimiento from tbl_seguimiento where idComunicado = '.$IidComunicado;
@@ -115,7 +117,7 @@ $actulizado="falso";
     
     
     if ($IidComunicado==0) {
-        $insertSQL ='INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro, mapa, idAreaUIS, seguimiento) VALUES ('.$tipo_comunicado.','.$tipo_contaminacion.', \''.$titulo.'\', \''.$contenido.'\', \''.$imagen.'\', '.$pdf.', '.$_SESSION['id'].', \''.$fecha.'\', '.$nivel_riesgo[0].', '.$nivel_alerta[0].', '.$estatus_fito.', 0, '.$area.', curdate(),'.$mapa.','.$id_area.', '.$seguimiento.')';
+        $insertSQL ='INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro, mapa, idAreaUIS, seguimiento, folio) VALUES ('.$tipo_comunicado.','.$tipo_contaminacion.', \''.$titulo.'\', \''.$contenido.'\', \''.$imagen.'\', '.$pdf.', '.$_SESSION['id'].', \''.$fecha.'\', '.$nivel_riesgo[0].', '.$nivel_alerta[0].', '.$estatus_fito.', 0, '.$area.', curdate(),'.$mapa.','.$id_area.', '.$seguimiento.',\''.$folio.'\')';
         
         mysql_select_db($database_rari_coneccion, $rari_coneccion);
         $Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
@@ -335,18 +337,41 @@ $actulizado="falso";
 //SEGUIMIENTO
 
 if ($actualizado=="ok") {
-    $insertSQL_historico ='INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro, mapa, idAreaUIS, seguimiento) VALUES ('.$tipo_comunicado.','.$tipo_contaminacion.', \''.$titulo.'\', \''.$contenido.'\', \''.$imagen.'\', '.$pdf.', '.$_SESSION['id'].', \''.$fecha.'\', '.$nivel_riesgo[0].', '.$nivel_alerta[0].', '.$estatus_fito.', 0, '.$area.', curdate(),'.$mapa.','.$id_area.', '.$seguimiento.')';
+    if(isset($_POST['txtfolio'])){
+		$folio=$_POST['txtfolio'];		
+	}
+    $insertSQL ='INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro, mapa, idAreaUIS, seguimiento, folio) VALUES ('.$tipo_comunicado.','.$tipo_contaminacion.', \''.$titulo.'\', \''.$contenido.'\', \''.$imagen.'\', '.$pdf.', '.$_SESSION['id'].', \''.$fecha.'\', '.$nivel_riesgo[0].', '.$nivel_alerta[0].', '.$estatus_fito.', 0, '.$area.', curdate(),'.$mapa.','.$id_area.', '.$seguimiento.',\''.$folio.'\')';
         
     mysql_select_db($database_rari_coneccion, $rari_coneccion);
-    $Result1_historico= mysql_query($insertSQL_historico, $rari_coneccion) or die(mysql_error());
+    $Result1= mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
     $id_alerta = mysql_insert_id($rari_coneccion);
 
     //Inserción de productos u hospederos   OK
     $arreglo_productos=$_POST['cmb_productos'];
     for ($i=0;$i<count($arreglo_productos);$i++) {
-        $insertSQL_historico ='INSERT INTO det_comunicado_productos (idComunicado, idProducto) VALUES ('.$id_alerta.', '.$arreglo_productos[$i].')';
+        $insertSQL ='INSERT INTO det_comunicado_productos (idComunicado, idProducto) VALUES ('.$id_alerta.', '.$arreglo_productos[$i].')';
         mysql_select_db($database_rari_coneccion, $rari_coneccion);
-        $Result1_historico = mysql_query($insertSQL_historico, $rari_coneccion) or die(mysql_error());
+        $Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+    }
+
+    //enlaces Url
+    if (isset($_POST['resultEnlaces'])) {
+        $arreglo_enlaces= explode('°', $_POST['resultEnlaces']);
+        
+        for ($i=0;$i<count($arreglo_enlaces)-1;$i++) {
+            $insertSQL ='INSERT INTO det_comunicado_enlace (idComunicado, enlace) VALUES ('.$id_alerta.', \''.$arreglo_enlaces[$i].'\')';
+            mysql_select_db($database_rari_coneccion, $rari_coneccion);
+            $Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
+        }
+    }
+
+
+    //Inserción de agentes   OK
+    $arreglo_agentes=$_POST['cmb_agentes'];
+    for ($i=0;$i<count($arreglo_agentes);$i++) {
+        $insertSQL ='INSERT INTO det_comunicado_agente (idComunicado, idAgente) VALUES ('.$id_alerta.', '.$arreglo_agentes[$i].')';
+        mysql_select_db($database_rari_coneccion, $rari_coneccion);
+        $Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
     }
 
         

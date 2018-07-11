@@ -151,6 +151,20 @@
 							</td>
 						</tr>
 					</table>
+
+					<div class="lineasverticales"></div>
+
+					 <table width="100%">
+						<tr>
+							<td width="36%">
+								<div class="campo_folio"><h3 style="margin-left:20px; color:#333;">Folio:<h3 /></div>
+							</td>
+							<td width="64%">
+								<input type="text" id="txtfolio" name="txtfolio" style="min-width:200px" value="<?php echo ($comunicado!=null?$dataComunicado['folio']:"");?>" readonly  />
+								
+							</td>
+						</tr>
+					</table> 
 	 
 					<div class="lineasverticales"></div>
 	 

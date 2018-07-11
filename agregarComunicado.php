@@ -76,7 +76,8 @@
 		$pdf="'".$_POST['lPdf']."'";
 	else
 		$pdf="null";
-
+		
+	
 	if(isset($_POST['lMapa'])&&$_POST['lMapa']!=0)
 		$mapa="'".$_POST['lMapa']."'";
 	else if(isset($_FILES['txtMapa']))
@@ -87,6 +88,7 @@
 	}
 	else
 		$mapa="null";
+	
 
 
 	$nivel_riesgo=$_POST['cmb_nivel_riesgo'];
@@ -101,11 +103,10 @@
 
 
 	if(isset($_POST['txtfolio'])){
-		$folio=$_POST['txtfolio'];
-		
+		$folio=$_POST['txtfolio'];		
 	}
 	
-    echo" El folio es: " .$folio;
+    
 
 	
 
@@ -113,7 +114,9 @@
 	if($IidComunicado==0)
 	{
 		//$insertSQL ="INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro, mapa, idAreaUIS) VALUES (".$tipo_comunicado.",".$tipo_contaminacion.", '".$titulo."', '".$contenido."', '".$imagen."', ".utf8_decode($pdf).", ".$_SESSION['id'].", '".$fecha."', ".$nivel_riesgo[0].", ".$nivel_alerta[0].", ".$estatus_fito.", 0, ".$area.", curdate(),".$mapa.",".$id_area.")";
-		$insertSQL ="INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro, mapa, idAreaUIS, seguimiento) VALUES (".$tipo_comunicado.",".$tipo_contaminacion.", '".$titulo."', '".$contenido."', '".$imagen."', ".$pdf.", ".$_SESSION['id'].", '".$fecha."', ".$nivel_riesgo[0].", ".$nivel_alerta[0].", ".$estatus_fito.", 0, ".$area.", curdate(),".$mapa.",".$id_area.", ".$seguimiento.")";
+		$insertSQL ="INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro, mapa, idAreaUIS, seguimiento, folio) VALUES (".$tipo_comunicado.",".$tipo_contaminacion.", '".$titulo."', '".$contenido."', '".$imagen."', ".$pdf.", ".$_SESSION['id'].", '".$fecha."', ".$nivel_riesgo[0].", ".$nivel_alerta[0].", ".$estatus_fito.", 0, ".$area.", curdate(),".$mapa.",".$id_area.", ".$seguimiento.",'".$folio."')";
+		
+		//$insertSQL ="INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo) VALUES (".$tipo_comunicado.",".$tipo_contaminacion.", '".$titulo."')";
 		
 		mysql_select_db($database_rari_coneccion, $rari_coneccion);
 		$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
