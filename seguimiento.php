@@ -146,7 +146,8 @@
 					<table width="100%">
 						<tr><td width="36%"><div class="campo_titulo"><h3 style="margin-left:20px; color:#333;">T&iacute;tulo:<h3 /></div></td>
 							<td width="64%">
-								<input type="text" id="txtTituloComunicado" name="txtTituloComunicado" style="min-width:400px" value="<?php echo $dataComunicado['titulo'];?>" readonly />
+								<!--<input type="text" id="txtTituloComunicado" name="txtTituloComunicado" style="min-width:400px" value="<?php echo $dataComunicado['titulo'];?>" readonly />-->
+								<input type="text" id="txtTituloComunicado" name="txtTituloComunicado" style="min-width:400px" value="<?php echo $dataComunicado['titulo'];?>"  />
 							</td>
 						</tr>
 					</table>

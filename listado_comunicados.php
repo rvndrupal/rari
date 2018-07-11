@@ -60,11 +60,11 @@
 		//$query_catalogos = 'SELECT id, idTipoComunicado, fecha, titulo, imagen FROM tbl_comunicado where idArea='.$modulo;
 		if($modulo != 0)
 		{
-			$query_catalogos = "SELECT id, idTipoComunicado, fecha, fecha_registro, titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea=".$modulo;
+			$query_catalogos = "SELECT  id, idTipoComunicado, fecha, fecha_registro, titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea=".$modulo;
 		}
 		else
 		{
-			$query_catalogos = "SELECT id, idTipoComunicado, fecha, titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea>0 ";
+			$query_catalogos = "SELECT DISTINCT id, idTipoComunicado, fecha, titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea>0 ";
 		}
 
 		if(isset($_GET['tipo'])&&$_GET['tipo']>0)
@@ -120,11 +120,13 @@
 		if($esAdmin)
 		{
 			$query_catalogos = $query_catalogos. " and estatus_comunicado in (1,2)";
+			
 		}
 		else 
 		{
 			$query_catalogos = $query_catalogos. " and estatus_comunicado = 1";
 		}
+
 
 		echo $query_catalogos;
 
@@ -185,7 +187,7 @@
 		<?php }?>
 	</tr>
 	<tr height="80px" bgcolor="#333" style="display:none; background-image:url(imagenes/barra.png);" class="row_detalle" id="row_<?php echo $row_catalogos['id'];?>">
-		<td colspan="<?php echo ($esAdmin)? "7":"6";?>">
+		<td colspan="<?php echo ($esAdmin)? "7":"8";?>">
 			<div id="info_alerta_<?php echo $row_catalogos['id'];?>" class="info_alerta"></div>
 		</td>
 	</tr>

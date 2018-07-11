@@ -18,6 +18,7 @@
 
 	$titulo=$_POST['txtTituloComunicado'];
 	$tipo_comunicado=$_POST['cmb_comunicados'][0];
+	
 
 	//Código nuevo. Se agrega variable para recibir el combo de áreas de adscripción. LVC. 7-Junio-2017.
 	$areas_adscripcion=$_POST['cmb_area_adscripcion'][0];
@@ -44,6 +45,7 @@
 	}
 	//Termina código nuevo.
 
+	
 	if(isset($_POST['cmb_contaminacion']))
 		$tipo_contaminacion=$_POST['cmb_contaminacion'][0];
 	else
@@ -96,6 +98,15 @@
 
 	
 	$area=$_POST['ar'];
+
+
+	if(isset($_POST['txtfolio'])){
+		$folio=$_POST['txtfolio'];
+		
+	}
+	
+    echo" El folio es: " .$folio;
+
 	
 
 	// Se agrega funcionalidad nueva para establecer seguimientos. Se inserta dato en tabla tbl_comunicado. LVC 5-Octubre-2017.
@@ -329,6 +340,8 @@
 		mysql_select_db($database_rari_coneccion, $rari_coneccion);
 		$Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
 	}
+
+
 	
 	/*
 	//enviando correo a interesado.
