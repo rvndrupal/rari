@@ -352,7 +352,8 @@
 					<div class="lineasverticales"></div>
 					
 					<table width="90%" align="center"><h5 style="margin-left:20px; color:#333;">DESCRIPCIÓN DEL COMUNICADO: <h5 />
-						<tr><td width="100%"><textarea  style="width:100%; max-width:100%"  name="contenido" id="txt_contenido" rows="6" readonly ><?php echo strip_tags($dataSeguimiento['seguimientoResumen']);?></textarea></td></tr>
+					<tr><td width="100%"><textarea  style="width:100%; max-width:100%"  name="contenido" id="txt_contenido" rows="6" readonly ><?php echo strip_tags($dataSeguimiento['seguimientoResumen']);?></textarea></td></tr>
+					<!--	<tr><td width="100%"><textarea  style="width:100%; max-width:100%"  name="contenido" id="txt_contenido" rows="6"  ><?php // echo strip_tags($dataSeguimiento['seguimientoResumen']);?></textarea></td></tr>-->
 					</table>
 					
 					<div class="lineasverticales"></div>

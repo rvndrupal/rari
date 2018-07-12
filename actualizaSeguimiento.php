@@ -116,6 +116,7 @@ $actulizado="falso";
     $id_seguimiento = mysql_fetch_assoc($obtenerIdSeg);
     
     
+    
     if ($IidComunicado==0) {
         $insertSQL ='INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro, mapa, idAreaUIS, seguimiento, folio) VALUES ('.$tipo_comunicado.','.$tipo_contaminacion.', \''.$titulo.'\', \''.$contenido.'\', \''.$imagen.'\', '.$pdf.', '.$_SESSION['id'].', \''.$fecha.'\', '.$nivel_riesgo[0].', '.$nivel_alerta[0].', '.$estatus_fito.', 0, '.$area.', curdate(),'.$mapa.','.$id_area.', '.$seguimiento.',\''.$folio.'\')';
         
@@ -123,13 +124,14 @@ $actulizado="falso";
         $Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
         $id_alerta = mysql_insert_id($rari_coneccion);
 
-        //$insertSQLseg ='INSERT INTO tbl_seguimiento (idComunicado, seguimientoResumen, seguimientoCambios) VALUES ('.$id_alerta.',\'Resumen Original \n'.$contenido.'\n************************************\', \'Alta de seguimiento. '.date().'\n \' )';
+        
         $insertSQLseg ='INSERT INTO tbl_seguimiento (idComunicado, seguimientoResumen, seguimientoCambios) VALUES ('.$id_alerta.',\'Resumen Original \n'.$contenido.'\n************************************\', \'Alta de seguimiento. '.date().'\n \' )';
 
         mysql_select_db($database_rari_coneccion, $rari_coneccion);
         $Result2 = mysql_query($insertSQLseg, $rari_coneccion) or die(mysql_error());
     } else {
-		$id_alerta =$IidComunicado;
+        $id_alerta =$IidComunicado;
+       // var_dump($IidComunicado);
 		
        /* $insertSQL ='UPDATE tbl_comunicado SET  idTipoComunicado='.$tipo_comunicado.', idTipoContaminacion='.$tipo_contaminacion.' , imagen=\''.$imagen.'\', documento='.$pdf.', idUsuario='.$_SESSION['id'].', fecha=\''.$fecha.'\', idNivelRiesgo='.$nivel_riesgo[0].', idNivelAlerta='.$nivel_alerta[0].', idEstatus='.$estatus_fito.', mapa='.$mapa.', idAreaUIS='.$id_area.', seguimiento='.$seguimiento.' WHERE id='.$id_alerta;
     
@@ -139,10 +141,11 @@ $actulizado="falso";
 		
 
 
-        $updateSQLseg ='UPDATE tbl_seguimiento SET seguimientoResumen=CONCAT(\''.$detalles_seguimiento.'\', \'\n\nNuevo registro \t\', curdate(), \'\n\n\', \''.$nuevos_detalles_seguimiento.'\', \'\n\n************************************\n\') WHERE idSeguimiento= '.$id_seguimiento['idSeguimiento'];
-    
+        //$updateSQLseg ='UPDATE tbl_seguimiento SET seguimientoResumen=CONCAT(\''.$detalles_seguimiento.'\', \'\n\nNuevo registro \t\', curdate(), \'\n\n\', \''.$nuevos_detalles_seguimiento.'\', \'\n\n************************************\n\') WHERE idSeguimiento= '.$id_seguimiento['idSeguimiento'];
+        /*$insertSQLseg ='INSERT INTO tbl_seguimiento (idComunicado, seguimientoResumen, seguimientoCambios) VALUES ('.$IidComunicado.',\'Resumen Original \n'.$detalles_seguimiento.'\n************************************\', \'Alta de seguimiento. '.$nuevos_detalles_seguimiento.'\n \' )';
+        
         mysql_select_db($database_rari_coneccion, $rari_coneccion);
-		$Result1 = mysql_query($updateSQLseg, $rari_coneccion) or die(mysql_error());
+		$Result1 = mysql_query($insertSQLseg, $rari_coneccion) or die(mysql_error());*/
 		
 				
         
@@ -494,6 +497,13 @@ if ($actualizado=="ok") {
         mysql_select_db($database_rari_coneccion, $rari_coneccion);
         $Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
     }
+
+    //tabla seguimiento
+    $IidComunicado+=1;
+    $insertSQLseg ='INSERT INTO tbl_seguimiento (idComunicado, seguimientoResumen, seguimientoCambios) VALUES ('.$IidComunicado.',\'Resumen Original \n'.$detalles_seguimiento.'\n************************************\', \'Alta de seguimiento. '.$nuevos_detalles_seguimiento.'\n \' )';
+        
+        mysql_select_db($database_rari_coneccion, $rari_coneccion);
+		$Result1 = mysql_query($insertSQLseg, $rari_coneccion) or die(mysql_error());
 }
 
 //SEGUIMIENTO

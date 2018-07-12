@@ -311,11 +311,21 @@
 					$fin = 0;
 				
 					mysql_select_db($database_rari_coneccion, $rari_coneccion);	
-					$mysql_obtener_titulo_comunicado = 'select com.id, com.titulo, com.fecha_registro, com.idnivelriesgo, com.idarea, seg.idseguimiento ';
+					/*$mysql_obtener_titulo_comunicado = 'select com.id, com.titulo, com.fecha_registro, com.idnivelriesgo, com.idarea, com.folio, seg.idseguimiento ';
 					$mysql_obtener_titulo_comunicado = $mysql_obtener_titulo_comunicado.'from tbl_comunicado com, tbl_seguimiento seg ';
-					$mysql_obtener_titulo_comunicado = $mysql_obtener_titulo_comunicado.'where com.id = seg.idComunicado ';
-					$mysql_obtener_titulo_comunicado = $mysql_obtener_titulo_comunicado.'and com.seguimiento = 1 ';
-					$mysql_obtener_titulo_comunicado = $mysql_obtener_titulo_comunicado.'and com.idUsuario = '.$_SESSION['id'];
+					$mysql_obtener_titulo_comunicado = $mysql_obtener_titulo_comunicado.'where com.id = seg.idComunicado ';					
+					$mysql_obtener_titulo_comunicado = $mysql_obtener_titulo_comunicado.'and com.seguimiento = 1 ';					
+					$mysql_obtener_titulo_comunicado = $mysql_obtener_titulo_comunicado.'and com.idUsuario = '.$_SESSION['id'];*/
+
+					$mysql_obtener_titulo_comunicado='SELECT * from tbl_comunicado
+					where seguimiento=1
+					and id in(select max(id) from tbl_comunicado GROUP by folio)
+					ORDER BY 1';
+					
+
+					
+					
+					
 					$datos_comunicado_seguimiento =  mysql_query($mysql_obtener_titulo_comunicado, $rari_coneccion) or die(mysql_error());
 				
 					$elementos_comunicado_seguimiento = mysql_num_rows($datos_comunicado_seguimiento);
@@ -333,11 +343,11 @@
 						$dateSeg = new DateTime($row_seguimiento['fecha_registro']);					
 						echo '<div class="interiorSeg">';
 					
-						if ($row_seguimiento['idnivelriesgo'] == 3)
+						if ($row_seguimiento['idNivelRiesgo'] == 3)
 						{
 							echo '<div class="etiquetaSegAlta" style="width:500px" >';
 						}
-						else if ($row_seguimiento['idnivelriesgo'] == 4)
+						else if ($row_seguimiento['idNivelRiesgo'] == 4)
 						{
 							echo '<div class="etiquetaSegMedia" style="width:500px" >';
 						}
@@ -355,8 +365,9 @@
 					
 						$diff = $dateSeg->diff($dateHoy);
 					
-						echo '<tr><td colspan="3" align="right">'.$diff->days.' días de seguimiento </td></tr>';
-						echo '<tr><td colspan="3" align="right">Enlace:  <a href="seguimiento.php?mod='.$row_seguimiento['idarea'].'&comunicado='.$row_seguimiento['id'].'" >ir al seguimiento </a></td></tr>';
+						echo '<tr><td colspan="3" align="right">'.$diff->days.' días de seguimientos </td></tr>';
+						echo '<tr><td colspan="3" align="right">Folio: '.$row_seguimiento['folio'].'</td></tr>';
+						echo '<tr><td colspan="3" align="right">Enlace:  <a href="seguimiento.php?mod='.$row_seguimiento['idArea'].'&comunicado='.$row_seguimiento['id'].'" >ir al seguimiento </a></td></tr>';
 						echo '</table>';
 						echo '</div>';		
 					}
