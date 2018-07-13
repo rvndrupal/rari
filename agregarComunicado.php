@@ -104,6 +104,8 @@
 
 	if(isset($_POST['txtfolio'])){
 		$folio=$_POST['txtfolio'];		
+	}else{
+		$folio="Inicio-Seguimiento";
 	}
 	
     

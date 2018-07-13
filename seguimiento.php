@@ -153,7 +153,7 @@
 					</table>
 
 					<div class="lineasverticales"></div>
-
+					<!--
 					 <table width="100%">
 						<tr>
 							<td width="36%">
@@ -165,8 +165,9 @@
 							</td>
 						</tr>
 					</table> 
+					-->
 	 
-					<div class="lineasverticales"></div>
+					
 	 
 					<table width="100%">
 						<tr><td width="36%"><div class="campo_titulo"><h3 style="margin-left:20px; color:#333;">Tipo de Comunicados:<h3 /></div></td>

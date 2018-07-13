@@ -153,7 +153,7 @@
 							</td>
 						</tr>
 					</table>
-
+					<!--
 					 <table width="100%">
 						<tr>
 							<td width="36%">
@@ -165,7 +165,7 @@
 							</td>
 						</tr>
 					</table> 
-		 
+					-->
 					<div class="lineasverticales"></div>
 		 
 					<table width="100%">
