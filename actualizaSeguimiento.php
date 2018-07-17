@@ -344,9 +344,10 @@ if ($actualizado=="ok") {
    // $fechaf = date("h:i:s");
     $texto=substr($titulo, 0 , 4);
     $folio='Seg-'.$texto;
+    $hora=date("h:i:s");
 
    
-    $insertSQL ='INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro, mapa, idAreaUIS, seguimiento, folio) VALUES ('.$tipo_comunicado.','.$tipo_contaminacion.', \''.$titulo.'\', \''.$contenido.'\', \''.$imagen.'\', '.$pdf.', '.$_SESSION['id'].', \''.$fecha.'\', '.$nivel_riesgo[0].', '.$nivel_alerta[0].', '.$estatus_fito.', 0, '.$area.', curdate(),'.$mapa.','.$id_area.', '.$seguimiento.',\''.$folio.'\')';
+    $insertSQL ='INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro,hora, mapa, idAreaUIS, seguimiento, folio) VALUES ('.$tipo_comunicado.','.$tipo_contaminacion.', \''.$titulo.'\', \''.$contenido.'\', \''.$imagen.'\', '.$pdf.', '.$_SESSION['id'].', \''.$fecha.'\', '.$nivel_riesgo[0].', '.$nivel_alerta[0].', '.$estatus_fito.', 0, '.$area.', curdate(),\''.$hora.'\','.$mapa.','.$id_area.', '.$seguimiento.',\''.$folio.'\')';
         
     mysql_select_db($database_rari_coneccion, $rari_coneccion);
     $Result1= mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
