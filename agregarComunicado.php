@@ -105,7 +105,10 @@
 	if(isset($_POST['txtfolio'])){
 		$folio=$_POST['txtfolio'];		
 	}else{
-		$folio="Inicio-Seguimiento";
+		$titulo=$_POST['txtTituloComunicado'];
+		// $fechaf = date("h:i:s");
+		 $texto=substr($titulo, 0 , 4);
+		 $folio='Seg-'.$texto;
 	}
 	
     

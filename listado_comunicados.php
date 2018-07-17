@@ -119,12 +119,12 @@
 
 		if($esAdmin)
 		{
-			$query_catalogos = $query_catalogos. " and estatus_comunicado in (1,2)";
+			$query_catalogos = $query_catalogos. " and estatus_comunicado in (1,2) order by folio";
 			
 		}
 		else 
 		{
-			$query_catalogos = $query_catalogos. " and estatus_comunicado = 1";
+			$query_catalogos = $query_catalogos. " and estatus_comunicado = 1 order by folio";
 		}
 
 
@@ -176,6 +176,7 @@
 		<td align="center">
 			<div class="ico-lista" style="background-image:url(imagenes/tipo_comunicados/<?php echo obtenerNombreIco($row_catalogos['idTipoComunicado']) ?>);"></div>
 		</td>
+		
 		<td><?php echo $row_catalogos['fecha'];?></td>
 		<td><?php echo $row_catalogos['fecha_registro'];?></td>
 		<td><?php echo $row_catalogos['folio'];?></td>
