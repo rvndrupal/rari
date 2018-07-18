@@ -103,7 +103,7 @@
 	else
 	{
 		$idAlerta=$_GET['idAlerta'];
-		$det_bitacoraSQL="select *from tbl_comunicado where id=".$idAlerta;
+		$det_bitacoraSQL="select * from tbl_comunicado where id=".$idAlerta;
 
 		mysql_select_db($database_rari_coneccion, $rari_coneccion);
 		$det_bitacora = mysql_query($det_bitacoraSQL, $rari_coneccion) or die(mysql_error());
@@ -396,8 +396,9 @@
 					<span class="triangulo-izq"></span><span class="triangulo-der"></span>
 				</div>
 				<table width="95%" align="center" >
+				
 					<tr>
-						<td colspan="2"><?php echo $contenido; ?></td>
+						<td colspan="2"><?php echo $contenido."hola"; ?></td>
 					</tr>
 					
 					<tr height="400px">

@@ -404,14 +404,17 @@
 				return array("det_comunicado_area_adscripcion", "cat_area_adscripcion", "idAreaAdscripcion");
 		}
 	}
+
+	
 	
 	//Función para obtener los datos de la tabla de seguimientos.
 	//LVC 18-Octubre-2017
 	function obtenerDataSeguimiento($database_rari_coneccion, $rari_coneccion, $id)
 	{
-		mysql_select_db($database_rari_coneccion, $rari_coneccion);
+		mysql_select_db($database_rari_coneccion, $rari_coneccion);	
 		
 		$query_catalogo = "SELECT * FROM tbl_seguimiento where idComunicado=".$id;
+		//$query_catalogo = "SELECT * FROM tbl_seguimiento";
 		$catalogo = mysql_query($query_catalogo, $rari_coneccion) or die(mysql_error());
 		$totalRows_catalogo= mysql_num_rows($catalogo);
 			
@@ -420,6 +423,29 @@
 			
 		return mysql_fetch_assoc($catalogo);
 	}
+
+	function obtenerFolio($database_rari_coneccion, $rari_coneccion,$id){
+		
+		mysql_select_db($database_rari_coneccion, $rari_coneccion);	
+		
+		$query_catalogo = "SELECT folio FROM tbl_comunicado";
+		$folioR = mysql_query($query_catalogo, $rari_coneccion) or die(mysql_error());
+		return mysql_fetch_assoc($folioR);
+	}
+
+	function obtenerDesc($database_rari_coneccion, $rari_coneccion,$id,$foll){
+		
+		mysql_select_db($database_rari_coneccion, $rari_coneccion);	
+		
+		$query_com = "SELECT desc_comunicado FROM tbl_comunicado WHERE folio = '".$foll."' ORDER by desc_comunicado desc";
+		$desF = mysql_query($query_com, $rari_coneccion) or die(mysql_error());
+		return mysql_fetch_assoc($desF);
+	}
+
+	
+
+
+	
 	//Termina código nuevo.
 
 	/*	function obtenerDataComunicado($database_rari_coneccion, $rari_coneccion,$id){
