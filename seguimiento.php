@@ -88,7 +88,7 @@
 
 
 			//var_dump($descSeguimiento);
-			foreach($descSeguimiento as $seguir){ echo "Seguimientos -> ".$seguir."<p>";}
+			//foreach($descSeguimiento as $seguir){ echo "Seguimientos -> ".$seguir."<p>";}
 			
 			
 			
