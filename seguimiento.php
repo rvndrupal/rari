@@ -79,11 +79,19 @@
 			$dataSeguimiento = obtenerDataSeguimiento($database_rari_coneccion, $rari_coneccion,$comunicado);
 			$dataFolio = obtenerFolio($database_rari_coneccion, $rari_coneccion,$comunicado);
 			$FoliSeg=$dataFolio['folio'];
-			$descSeguimiento=obtenerDesc($database_rari_coneccion, $rari_coneccion,$comunicado,$FoliSeg);
-			//echo "hola".$descSeguimiento['desc_comunicado'];
-			echo $FoliSeg."#########";
-			var_dump($descSeguimiento);
-			echo"############### seguimeinto " .$descSeguimiento['desc_comunicado'];
+			
+			$descSeguimiento=obtenerDesc($database_rari_coneccion, $rari_coneccion,$FoliSeg);
+			
+			//echo $FoliSeg."hola<p></p>";
+			//echo $comunicado;
+
+
+
+			//var_dump($descSeguimiento);
+			foreach($descSeguimiento as $seguir){ echo "Seguimientos -> ".$seguir."<p>";}
+			
+			
+			
 		}
 		else
 		{
@@ -366,7 +374,7 @@
 					<div class="lineasverticales"></div>
 					
 					<table width="90%" align="center"><h5 style="margin-left:20px; color:#333;">DESCRIPCIÓN DEL COMUNICADO: <h5 />
-					<tr><td width="100%"><textarea  style="width:100%; max-width:100%"  name="contenido" id="txt_contenido" rows="6" readonly ><?php echo strip_tags($descSeguimiento['desc_comunicado']);?></textarea></td></tr>
+					<tr><td width="100%"><textarea  style="width:100%; max-width:100%"  name="contenido" id="txt_contenido" rows="6" readonly ><?php foreach($descSeguimiento as $seguir){ echo strip_tags("Seguimientos -> ".$seguir."\n");}?></textarea></td></tr>
 					<!--	<tr><td width="100%"><textarea  style="width:100%; max-width:100%"  name="contenido" id="txt_contenido" rows="6"  ><?php // echo strip_tags($dataSeguimiento['seguimientoResumen']);?></textarea></td></tr>-->
 					</table>
 					

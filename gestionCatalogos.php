@@ -428,18 +428,29 @@
 		
 		mysql_select_db($database_rari_coneccion, $rari_coneccion);	
 		
-		$query_catalogo = "SELECT folio FROM tbl_comunicado";
+		$query_catalogo = "SELECT folio FROM tbl_comunicado where id=".$id;
 		$folioR = mysql_query($query_catalogo, $rari_coneccion) or die(mysql_error());
 		return mysql_fetch_assoc($folioR);
 	}
 
-	function obtenerDesc($database_rari_coneccion, $rari_coneccion,$id,$foll){
+	function obtenerDesc($database_rari_coneccion, $rari_coneccion,$foll){
 		
 		mysql_select_db($database_rari_coneccion, $rari_coneccion);	
 		
-		$query_com = "SELECT desc_comunicado FROM tbl_comunicado WHERE folio = '".$foll."' ORDER by desc_comunicado desc";
+		//$query_com = "SELECT desc_comunicado FROM tbl_comunicado WHERE folio = '".$foll."' ORDER by desc_comunicado desc";
+		$query_com = "SELECT desc_comunicado FROM tbl_comunicado WHERE folio = '".$foll."' ";
 		$desF = mysql_query($query_com, $rari_coneccion) or die(mysql_error());
-		return mysql_fetch_assoc($desF);
+		//return mysql_fetch_assoc($desF);
+		$filas=array();
+		$i=0;
+		while($des_com = mysql_fetch_assoc($desF))
+		{
+			$filas[$i]=$des_com["desc_comunicado"];
+			$i++;
+		}
+		
+		return $filas;
+		
 	}
 
 	
