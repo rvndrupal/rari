@@ -398,7 +398,7 @@
 				<table width="95%" align="center" >
 				
 					<tr>
-						<td colspan="2"><?php echo $contenido."hola"; ?></td>
+						<td colspan="2"><?php echo $contenido; ?></td>
 					</tr>
 					
 					<tr height="400px">

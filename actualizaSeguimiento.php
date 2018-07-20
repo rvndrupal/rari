@@ -30,7 +30,7 @@
 		header('Location :' .$GoTo);
 	}	
 	
-$actulizado="falso";
+    $actualizado="falso";
 
     $titulo=$_POST['txtTituloComunicado'];
     $tipo_comunicado=$_POST['cmb_comunicados'][0];
@@ -105,9 +105,7 @@ $actulizado="falso";
         $estatus_fito='null';
 	}
 	
-	if(isset($_POST['txtfolio'])){
-		$folio=$_POST['txtfolio'];		
-	}
+	
     
     
     $buscarSQL ='select idSeguimiento from tbl_seguimiento where idComunicado = '.$IidComunicado;
@@ -344,9 +342,13 @@ $actulizado="falso";
 
 if ($actualizado=="ok") {
     $titulo=$_POST['txtTituloComunicado'];
-   // $fechaf = date("h:i:s");
-    $texto=substr($titulo, 0 , 4);
-    $folio='Seg-'.$texto;
+    //Generar folio
+
+    //$idc=$_POST['comunicado'];
+    
+    $obtenerF=$_POST['fb'];
+    
+	$folio=$obtenerF;
     $hora=date("h:i:s");
 
    

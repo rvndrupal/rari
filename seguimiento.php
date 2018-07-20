@@ -105,8 +105,9 @@
 			header(sprintf('Location: %s', $GoTo));
 		}
 
-		
-		
+		//obtener folio del comunicado
+		$fb="";
+		$fb=$_GET['foliob'];
 
 		
 		
@@ -160,6 +161,7 @@
 				<form id="formVegetal" name="formVegetal" method="post" enctype="multipart/form-data" action="#" > 
 					<input type="hidden" name="idcmncd" id="idcmncd" value="<?php echo base64_encode(base64_encode($comunicado)); ?>" />
 					<input type="hidden" name="ar" id="ar" value="<?php echo $modulo; ?>"/>
+					<input type="hidden" name="fb" id="fb" value="<?php echo $fb ?>"/>
 					<div class="etiqueta">
 						<div class="recuadro-interior"> >> Identidad</div> 
 						<span class="triangulo-izq"></span>

@@ -102,21 +102,77 @@
 	$area=$_POST['ar'];
 
 
-	if(isset($_POST['txtfolio'])){
-		$folio=$_POST['txtfolio'];		
-	}else{
-		$titulo=$_POST['txtTituloComunicado'];
-		// $fechaf = date("h:i:s");
-		 $texto=substr($titulo, 0 , 4);
-		 $folio='Seg-'.$texto;
+	//Generar folio
+
+	if(isset($_POST['mdd']))
+	{
+		$folio="";
+		$ini="";
+		$mdd=$_POST['mdd'];
+		var_dump($mdd);
+		if($mdd==1)
+		{
+			$ini="VEG-";
+		}
+		if($mdd==2)
+		{
+			$ini="ANI-";
+		}
+
+		if($mdd==3)
+		{
+			$ini="INO-";
+		}
+		if($mdd==4)
+		{
+			$ini="ACU-";
+		}
+
+		if($mdd==5)
+		{
+			$ini="INS-";
+		}
+		if($mdd==6)
+		{
+			$ini="UIS-";
+		}
 	}
+	
+	if($tipo_comunicado==1){
+		$tp="Alerta";
+	}
+	if($tipo_comunicado==2){
+		$tp="Cuarentena";
+	}
+	if($tipo_comunicado==3){
+		$tp="Información";
+	}
+	if($tipo_comunicado==4){
+		$tp="Noticias";
+	}
+	if($tipo_comunicado==5){
+		$tp="Rechazo";
+	}
+	if($tipo_comunicado==6){
+		$tp="Retención";
+	}
+	
+	
+
+
+	
+	$titulo=$_POST['txtTituloComunicado'];	
+	$texto=substr($titulo, 0 , 3);
+	$folio=$ini.$tp."-".$fecha;
+	
+
 
 	$hora=date("h:i:s");
 
-   /* if (isset($_POST['txt_contenido'])) {
-		$des_comunicado=$_POST['txt_contenido'];
-	}*/
-	
+
+	//Generar folio
+
+   
     
 
 	

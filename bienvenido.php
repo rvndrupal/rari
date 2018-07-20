@@ -367,7 +367,7 @@
 					
 						echo '<tr><td colspan="3" align="right">'.$diff->days.' días de seguimientos </td></tr>';
 						echo '<tr><td colspan="3" align="right">Folio: '.$row_seguimiento['folio'].'</td></tr>';
-						echo '<tr><td colspan="3" align="right">Enlace:  <a href="seguimiento.php?mod='.$row_seguimiento['idArea'].'&comunicado='.$row_seguimiento['id'].'" >ir al seguimiento </a></td></tr>';
+						echo '<tr><td colspan="3" align="right">Enlace:  <a href="seguimiento.php?mod='.$row_seguimiento['idArea'].'&comunicado='.$row_seguimiento['id'].'&foliob='.$row_seguimiento['folio'].'" >Ir al seguimiento </a></td></tr>';
 						echo '</table>';
 						echo '</div>';		
 					}

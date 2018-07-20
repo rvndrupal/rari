@@ -66,7 +66,7 @@
 			$dataComunicado=null;
 			if(isset($_GET['comunicado']))
 			{
-				$comunicado=$_GET["comunicado"];
+				$comunicado=$_GET["comunicado"];				
 				$dataComunicado=obtenerDataComunicado($database_rari_coneccion, $rari_coneccion,$comunicado);
 			}
 
@@ -75,6 +75,13 @@
 				$GoTo = "bienvenido.php";			
 				header(sprintf("Location: %s", $GoTo));
 			}
+
+			//Obtener modulo para el folio
+			$mdd="";
+			$mdd=$_GET['mod'];
+
+			
+			
 		?>
 		<script type="text/javascript" src="js/tcal.js"></script> 
 		<script src="js/jquery.min.js"></script>
@@ -137,6 +144,7 @@
 				<form id="formVegetal" name="formVegetal" method="post" enctype="multipart/form-data" action="#" > 
 					<?php if($comunicado!=null){?><input type="hidden" name="idcmncd" id="idcmncd" value="<?php echo base64_encode(base64_encode($comunicado)); ?>" /><?php }?>
 					<input type="hidden" name="ar" id="ar" value="<?php echo $modulo; ?>"/>
+					<input type="hidden" name="mdd" id="mdd" value="<?php echo $mdd ?>"/>
 					<div class="etiqueta">
 						<div class="recuadro-interior">
 							>> Identidad
