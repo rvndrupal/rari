@@ -58,13 +58,13 @@
 
 		mysql_select_db($database_rari_coneccion, $rari_coneccion);
 		//$query_catalogos = 'SELECT id, idTipoComunicado, fecha, titulo, imagen FROM tbl_comunicado where idArea='.$modulo;
-		if($modulo != 0)
+		if($modulo == 0)
 		{
 			$query_catalogos = "SELECT  id, idTipoComunicado, fecha, fecha_registro, hora, folio,  titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea=".$modulo;
 		}
 		else
 		{
-			$query_catalogos = "SELECT DISTINCT id, idTipoComunicado, fecha, titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea>0 ";
+			$query_catalogos = "SELECT  id, idTipoComunicado, fecha,fecha_registro, hora, folio, titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea>0 ";
 		}
 
 		if(isset($_GET['tipo'])&&$_GET['tipo']>0)
@@ -127,7 +127,7 @@
 			$query_catalogos = $query_catalogos. " and estatus_comunicado = 1 order by folio";
 		}
 
-
+		
 		echo $query_catalogos;
 
 		$catalogos = mysql_query($query_catalogos, $rari_coneccion) or die(mysql_error());
@@ -155,7 +155,7 @@
 		<?php }?>
 	<tr>
 		<!-- <td colspan="5" bgcolor="#333333" align="center"> -->
-		<td colspan="<?php echo ($esAdmin)? "7":"8";?>" bgcolor="#333333" align="center"><?php
+		<td colspan="<?php echo ($esAdmin)? "7":"10";?>" bgcolor="#333333" align="center"><?php
 			echo $ides;
 			echo $totalRows_catalogos." elemento(s) encontrado(s)."; ?></td>
 	</tr>
@@ -192,7 +192,7 @@
 		<?php }?>
 	</tr>
 	<tr height="80px" bgcolor="#333" style="display:none; background-image:url(imagenes/barra.png);" class="row_detalle" id="row_<?php echo $row_catalogos['id'];?>">
-		<td colspan="<?php echo ($esAdmin)? "7":"8";?>">
+		<td colspan="<?php echo ($esAdmin)? "7":"10";?>">
 			<div id="info_alerta_<?php echo $row_catalogos['id'];?>" class="info_alerta"></div>
 		</td>
 	</tr>

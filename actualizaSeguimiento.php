@@ -114,13 +114,18 @@
     $id_seguimiento = mysql_fetch_assoc($obtenerIdSeg);
 
     
-    
+    $IidComunicado=0;
     
     
     
     if ($IidComunicado==0) {
-        $insertSQL ='INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro, mapa, idAreaUIS, seguimiento, folio) VALUES ('.$tipo_comunicado.','.$tipo_contaminacion.', \''.$titulo.'\', \''.$contenido.'\', \''.$imagen.'\', '.$pdf.', '.$_SESSION['id'].', \''.$fecha.'\', '.$nivel_riesgo[0].', '.$nivel_alerta[0].', '.$estatus_fito.', 0, '.$area.', curdate(),'.$mapa.','.$id_area.', '.$seguimiento.',\''.$folio.'\')';
-        
+       // $insertSQL ='INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro, mapa, idAreaUIS, seguimiento, folio) VALUES ('.$tipo_comunicado.','.$tipo_contaminacion.', \''.$titulo.'\', \''.$contenido.'\', \''.$imagen.'\', '.$pdf.', '.$_SESSION['id'].', \''.$fecha.'\', '.$nivel_riesgo[0].', '.$nivel_alerta[0].', '.$estatus_fito.', 0, '.$area.', curdate(),'.$mapa.','.$id_area.', '.$seguimiento.',\''.$folio.'\')';
+       $obtenerF=$_POST['fb'];
+    
+       $folio=$obtenerF;
+       $hora=date("h:i:s");
+        $insertSQL ='INSERT INTO tbl_comunicado (idTipoComunicado, idTipoContaminacion, titulo, resumen, imagen, documento, idUsuario, fecha, idNivelRiesgo, idNivelAlerta, idEstatus, autorizacion, idArea, fecha_registro,hora, mapa, idAreaUIS, seguimiento, folio, desc_comunicado ) VALUES ('.$tipo_comunicado.','.$tipo_contaminacion.', \''.$titulo.'\', \''.$contenido.'\', \''.$imagen.'\', '.$pdf.', '.$_SESSION['id'].', \''.$fecha.'\', '.$nivel_riesgo[0].', '.$nivel_alerta[0].', '.$estatus_fito.', 0, '.$area.', curdate(),\''.$hora.'\','.$mapa.','.$id_area.', '.$seguimiento.',\''.$folio.'\',\''.$nuevos_detalles_seguimiento.'\')';
+       
         mysql_select_db($database_rari_coneccion, $rari_coneccion);
         $Result1 = mysql_query($insertSQL, $rari_coneccion) or die(mysql_error());
         $id_alerta = mysql_insert_id($rari_coneccion);
@@ -339,7 +344,7 @@
 		
 
 //SEGUIMIENTO
-
+/*
 if ($actualizado=="ok") {
     $titulo=$_POST['txtTituloComunicado'];
     //Generar folio
