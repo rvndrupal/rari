@@ -60,11 +60,11 @@
 		//$query_catalogos = 'SELECT id, idTipoComunicado, fecha, titulo, imagen FROM tbl_comunicado where idArea='.$modulo;
 		if($modulo == 0)
 		{
-			$query_catalogos = "SELECT  id, idTipoComunicado, fecha, fecha_registro, hora, folio,  titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea=".$modulo;
+			$query_catalogos = "SELECT  id, idTipoComunicado, fecha, fecha_registro,folio,  titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea=".$modulo;
 		}
 		else
 		{
-			$query_catalogos = "SELECT  id, idTipoComunicado, fecha,fecha_registro, hora, folio, titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea>0 ";
+			$query_catalogos = "SELECT  id, idTipoComunicado, fecha,fecha_registro,folio, titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea>0 ";
 		}
 
 		if(isset($_GET['tipo'])&&$_GET['tipo']>0)
@@ -142,8 +142,7 @@
 		<td width="8%" align="center">Riesgo</td>
 		<td width="8%" align="center"></td>
 		<td width="13%">Fechas</td>
-		<td width="15%">Fecha Registro</td>
-		<td width="15%">Hora</td>
+		<td width="15%">Fecha Registro</td>		
 		<td width="15%" align="letf">Folio</td>
 		<!-- <td width="40%" align="center">T&iacute;tulo</td> -->
 		<td width="<?php echo ($_SESSION['idRol'] == 1)? "27%":"37%";?>" align="left">T&iacute;tulo</td>
@@ -179,8 +178,7 @@
 		</td>
 		
 		<td><?php echo $row_catalogos['fecha'];?></td>
-		<td><?php echo $row_catalogos['fecha_registro'];?></td>
-		<td><?php echo $row_catalogos['hora'];?></td>
+		<td><?php echo $row_catalogos['fecha_registro'];?></td>		
 		<td><?php echo $row_catalogos['folio'];?></td>
 		<td><?php echo $row_catalogos['titulo'];?></td>
 		<td align="center">
