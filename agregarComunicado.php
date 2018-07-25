@@ -145,7 +145,7 @@
 		$tp="Cuarentena";
 	}
 	if($tipo_comunicado==3){
-		$tp="Información";
+		$tp="Informaci&oacute;n";
 	}
 	if($tipo_comunicado==4){
 		$tp="Noticias";
@@ -154,7 +154,7 @@
 		$tp="Rechazo";
 	}
 	if($tipo_comunicado==6){
-		$tp="Retención";
+		$tp="Retenci&oacute;n";
 	}
 	
 	
