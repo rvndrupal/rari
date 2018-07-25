@@ -139,11 +139,11 @@
 <input type="hidden" name="totalRows" id="totalRows" value="<?php echo $totalRows_catalogos; ?>"/>
 <table class="recuadro-interior" style="border-radius:10px" width="100%" align="center">
 	<tr height="40" class="recuadro-interior" style="color:#333">
-		<td width="8%" align="center">Riesgo</td>
-		<td width="8%" align="center"></td>
-		<td width="13%">Fechas</td>
+		<td width="15%" align="center">Riesgo</td>
+		<!--<td width="8%" align="center"></td>-->
+		<td width="15%">Fecha</td>
 		<td width="15%">Fecha Registro</td>		
-		<td width="15%" align="letf">Folio</td>
+		<td width="20%" align="center">Folio</td>
 		<!-- <td width="40%" align="center">T&iacute;tulo</td> -->
 		<td width="<?php echo ($_SESSION['idRol'] == 1)? "27%":"37%";?>" align="left">T&iacute;tulo</td>
 		<td width="10%" align="center">Im&aacute;gen</td>
@@ -170,9 +170,9 @@
 			if(isset($emitir))
 				$cadEnviar=$row_catalogos['id'].',false,'.$emitir;
 			echo $cadEnviar;?>)" class="fila" >
-		<td align="center">
+		<!--<td align="center">
 			<div class="ico-lista" style="background-image:url(imagenes/tipo_comunicados/<?php echo obtenernivelAlerta($row_catalogos['idNivelRiesgo']) ?>);"></div>
-		</td>
+		</td>-->
 		<td align="center">
 			<div class="ico-lista" style="background-image:url(imagenes/tipo_comunicados/<?php echo obtenerNombreIco($row_catalogos['idTipoComunicado']) ?>);"></div>
 		</td>

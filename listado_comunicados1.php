@@ -52,7 +52,8 @@
 		
 		mysql_select_db($database_rari_coneccion, $rari_coneccion);
 		//$query_catalogos = 'SELECT id, idTipoComunicado, fecha, titulo, imagen FROM tbl_comunicado where idArea='.$modulo;
-		$query_catalogos = 'SELECT id, idTipoComunicado, fecha, titulo, imagen FROM tbl_comunicado where idArea='.$modulo;
+		//$query_catalogos = 'SELECT id, idTipoComunicado, fecha,fecha_registro,folio, titulo, imagen FROM tbl_comunicado where idArea='.$modulo;
+		$query_catalogos ="SELECT  id, idTipoComunicado, fecha, fecha_registro,folio,  titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea=".$modulo;
 	
 
 
@@ -145,13 +146,16 @@
 
 	<table class="recuadro-interior" style="border-radius:10px" width="100%" align="center">
 		<tr height="40" class="recuadro-interior" style="color:#333">
-			<td width="8%" align="center"></td>
+			<!--<td width="8%" align="center"></td>-->
+			<td width="15%" align="center">Riesgo</td>
 			<td width="15%">Fecha</td>
-			<td width="40%" align="center">T&iacute;tulo</td>
+			<td width="15%">Fecha Registro</td>
+			<td width="20%" align="center">Folio</td>
+			<td width="20%" align="left">T&iacute;tulo</td>
 			<td width="10%" align="center">Im&aacute;gen</td>
 			<td width="27%" align="center">Lugar</td></tr>
 		<tr>
-			<td colspan="5" bgcolor="#333333" align="center"><?php
+			<td colspan="10" bgcolor="#333333" align="center"><?php
  
 		echo $ides;
 		echo $totalRows_catalogos.' elemento(s) encontrado(s).'; ?></td>
@@ -166,17 +170,20 @@
 				$cadEnviar=$row_catalogos['id'].',false,'.$emitir;
  
 			echo $cadEnviar;?>)" class="fila" >
+			
 			<td align="center">
 				<div class="ico-lista" style="background-image:url(imagenes/tipo_comunicados/<?php echo obtenerNombreIco($row_catalogos['idTipoComunicado']) ?>);"></div>
 			</td>
 			<td><?php echo $row_catalogos['fecha'];?></td>
+			<td><?php echo $row_catalogos['fecha_registro'];?></td>		
+			<td><?php echo $row_catalogos['folio'];?></td>
 			<td><?php echo $row_catalogos['titulo'];?></td>
 			<td align="center">
 				<div class="imagen-lista" style="background-image:url(archivos_alertas/imagenes/<?php echo $row_catalogos['imagen']; ?>);"></div>
 				<?php //echo $row_catalogos['imagen'];?></td>
 			<td style="font-size:10px;"><?php echo obtenerLoc($database_rari_coneccion, $rari_coneccion,$row_catalogos['id']) ?></td></tr>
 		<tr height="80px" bgcolor="#333" style="display:none; background-image:url(imagenes/barra.png);" class="row_detalle" id="row_<?php echo $row_catalogos['id'];?>">
-			<td colspan="5">
+			<td colspan="10">
 				<div id="info_alerta_<?php echo $row_catalogos['id'];?>" class="info_alerta"></div>
 			</td>
 		</tr>
