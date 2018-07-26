@@ -158,12 +158,12 @@
 	}
 	
 	
-
+	$Ffecha=date("dmy" ,strtotime($fecha));
 
 	
 	$titulo=$_POST['txtTituloComunicado'];	
 	$texto=substr($titulo, 0 , 4);
-	$folio=$ini.$tp."-".$fecha."-".$texto;
+	$folio=$ini.$tp."-".$Ffecha."-".$texto;
 	$foliom=strtolower($folio);
 	
 
