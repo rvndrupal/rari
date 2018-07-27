@@ -225,6 +225,7 @@
 	
 	function obtenerCatalogoSelectS($cat,$database_rari_coneccion,$rari_coneccion,$area,$idComuicado=0)
 	{
+		
 		mysql_select_db($database_rari_coneccion, $rari_coneccion);
 		if($cat>=19)
 			$query_catalogos = "SELECT *FROM tbl_".obtenerNombreTabla($cat).(($cat==21)?(" WHERE idEstado=".$area):(""));

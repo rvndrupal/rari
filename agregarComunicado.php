@@ -1,4 +1,5 @@
 ﻿<?php
+header("Content-Type: text/html;charset=utf-8");
 	ob_start();
 	function extension($str) 
 	{
@@ -137,6 +138,8 @@
 			$ini="UIS-";
 		}
 	}
+
+
 	
 	if($tipo_comunicado==1){
 		$tp="Alerta";
@@ -145,7 +148,8 @@
 		$tp="Cuarentena";
 	}
 	if($tipo_comunicado==3){
-		$tp="Informaci&oacute;n";
+		//$tp="Informaci&oacute;n";
+		$tp="Informacion";
 	}
 	if($tipo_comunicado==4){
 		$tp="Noticias";
@@ -154,9 +158,12 @@
 		$tp="Rechazo";
 	}
 	if($tipo_comunicado==6){
-		$tp="Retenci&oacute;n";
+		//$tp="Retenci&oacute;n";
+		$tp="Retencion";
 	}
 	
+	
+
 	
 	$Ffecha=date("dmy" ,strtotime($fecha));
 

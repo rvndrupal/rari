@@ -307,7 +307,6 @@
 				<!-- Nuevo código. Muestra información de seguimientos. LVC 23-Mayo-2018 -->
 				<?php 
 				
-				
 					$fin = 0;
 				
 					mysql_select_db($database_rari_coneccion, $rari_coneccion);	
