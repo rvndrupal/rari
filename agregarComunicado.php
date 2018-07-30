@@ -10,7 +10,7 @@ header("Content-Type: text/html;charset=utf-8");
 	include('php/inicioSesion.php');
 	require_once('Connections/rari_coneccion.php');
 
-	$IidComunicado=0;
+	//$IidComunicado=0;
 
 	if(isset($_POST['idcmncd']))
 		$IidComunicado=base64_decode(base64_decode($_POST['idcmncd']));

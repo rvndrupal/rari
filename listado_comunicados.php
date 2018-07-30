@@ -55,16 +55,18 @@
 		error_reporting(0);
 		if(!isset($modulo))
 			$modulo=$_GET['mod'];
+			
 
 		mysql_select_db($database_rari_coneccion, $rari_coneccion);
 		//$query_catalogos = 'SELECT id, idTipoComunicado, fecha, titulo, imagen FROM tbl_comunicado where idArea='.$modulo;
-		if($modulo == 0)
+		if($modulo != 0) //muy importante para los tipos de modulos es decir sectores tiene que ser diferente que 0
 		{
-			$query_catalogos = "SELECT  id, idTipoComunicado, fecha, fecha_registro,folio,  titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea=".$modulo;
+			$query_catalogos = "SELECT  id, idTipoComunicado, fecha, fecha_registro,folio, titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea=".$modulo;
 		}
 		else
 		{
 			$query_catalogos = "SELECT  id, idTipoComunicado, fecha,fecha_registro,folio, titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea>0 ";
+			
 		}
 
 		if(isset($_GET['tipo'])&&$_GET['tipo']>0)

@@ -53,7 +53,7 @@
 		mysql_select_db($database_rari_coneccion, $rari_coneccion);
 		//$query_catalogos = 'SELECT id, idTipoComunicado, fecha, titulo, imagen FROM tbl_comunicado where idArea='.$modulo;
 		//$query_catalogos = 'SELECT id, idTipoComunicado, fecha,fecha_registro,folio, titulo, imagen FROM tbl_comunicado where idArea='.$modulo;
-		$query_catalogos ="SELECT  id, idTipoComunicado, fecha, fecha_registro,folio,  titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea=".$modulo;
+		$query_catalogos ="SELECT  id, idTipoComunicado, fecha, fecha_registro,folio, titulo, imagen, estatus_comunicado, idNivelRiesgo FROM tbl_comunicado where idArea=".$modulo;
 	
 
 
