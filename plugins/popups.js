@@ -50,8 +50,8 @@
                 speed: 1000,
                 transition: 'slideUp',
                 transitionClose: 'slideUp',
-                position: [950, 149],
-                autoClose: 7000,
+                position: [950, 74],
+                autoClose: 70000,
                 onOpen: function() {},
                 onClose: function() {}
             });

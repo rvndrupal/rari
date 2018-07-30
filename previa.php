@@ -55,6 +55,8 @@
 
 		$contenido=$_POST['contenido'];
 
+		
+
 		if(isset($_POST['resultEnlaces']))
 		{
 			$enlaces=$_POST['resultEnlaces'];
@@ -105,10 +107,22 @@
 		$idAlerta=$_GET['idAlerta'];
 		$det_bitacoraSQL="select * from tbl_comunicado where id=".$idAlerta;
 
+		
+
 		mysql_select_db($database_rari_coneccion, $rari_coneccion);
 		$det_bitacora = mysql_query($det_bitacoraSQL, $rari_coneccion) or die(mysql_error());
 		$row_det_bitacora = mysql_fetch_assoc($det_bitacora);
 		$totalRows_det_bitacora = mysql_num_rows($det_bitacora);
+
+		//mostrar seguimientos
+		$conS="";
+		$conSegui="select desc_comunicado from tbl_comunicado where id=".$idAlerta;
+		mysql_select_db($database_rari_coneccion, $rari_coneccion);
+		$conS = mysql_query($conSegui, $rari_coneccion) or die(mysql_error());
+		$row_conS = mysql_fetch_assoc($conS);
+	
+		
+		
 	
 		if($totalRows_det_bitacora!=1)
 		{
@@ -398,7 +412,18 @@
 				<table width="95%" align="center" >
 				
 					<tr>
-						<td colspan="2"><?php echo $contenido; ?></td>
+						<td colspan="2"><?php echo $contenido; 
+						
+						echo"<p>Seguimiento actual:";
+						echo"<br>--------------------------------------------------------------------<br>";
+						echo $row_conS['desc_comunicado'];
+						
+						?>						
+						</td>
+						
+
+						<td colspan="2"><?php echo $conS; ?></td>
+						
 					</tr>
 					
 					<tr height="400px">
@@ -408,10 +433,11 @@
 							<!-- <object type="text/html" data="http://10.24.17.53/mapaAlertas/mapaAlertas.aspx?id=<?php echo $coordenadas; ?>"
 									style="width:100%; height:100%; border:2px solid #999;">
 							</object> -->
+							
 							<iframe src="http://sinavef.senasica.gob.mx/mapaAlertas/mapaAlertas.aspx?id=<?php echo $coordenadas; ?>"
 								style="width:950px; height:398px; border:2px solid #999;">
-							</iframe>
-							<!-- <iframe src="http://localhost:97/mapaAlertas/mapaAlertas.aspx?id=<?php echo $coordenadas; ?>"
+							</iframe> 
+							<!-- <iframe src="http://localhost/mapaAlertas/mapaAlertas.aspx?id=<?php echo $coordenadas; ?>"
 									style="width:950px; height:398px; border:2px solid #999;">
 							</iframe> -->
 							<?php }

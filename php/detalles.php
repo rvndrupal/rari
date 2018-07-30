@@ -298,4 +298,17 @@
 		return $regresa=$row_seg_comunicado['seguimiento'];
 	}
 	// Termina función nueva.
+
+	// Se crea nueva función, basada en la lógica actual, para obtener el seguimiento establecido en el comunicado. LVC 5-Octubre-2017
+	function obtenerDetalleSegN($idAlerta, $database_rari_coneccion, $rari_coneccion)
+	{
+		$seg_comunicadoSQLN='select desc_comunicado from tbl_comunicado where id='.$idAlerta;
+	
+		mysql_select_db($database_rari_coneccion, $rari_coneccion);
+		$seg_comunicado = mysql_query($seg_comunicadoSQLN, $rari_coneccion) or die(mysql_error());
+		$row_seg_comunicado = mysql_fetch_assoc($seg_comunicado);
+	
+		return $regresa=$row_seg_comunicado['seguimiento'];
+	}
+	// Termina función nueva.
 ?>
