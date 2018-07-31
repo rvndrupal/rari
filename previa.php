@@ -414,7 +414,7 @@
 					<tr>
 						<td colspan="2"><?php echo $contenido; 
 						
-						echo"<p>Seguimiento actual:";
+						echo"<p>Seguimiento Actual:";
 						echo"<br>--------------------------------------------------------------------<br>";
 						echo $row_conS['desc_comunicado'];
 						
